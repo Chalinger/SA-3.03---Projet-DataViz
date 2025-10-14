@@ -1,0 +1,37 @@
+[
+    {
+        "location-name": "Aulnois ss Laon",
+        "dpt": "02",
+        "latitude": 49.596,
+        "longitude": 3.61,
+        "altitude": "78"
+    },
+    {
+        "location-name": "Belle Ile",
+        "dpt": "56",
+        "latitude": 47.294,
+        "longitude": -3.218,
+        "altitude": "131"
+    },
+    {
+        "location-name": "Cavillargues",
+        "dpt": "30",
+        "longitude": 44.113,
+        "latitude": 4.519,
+        "altitude": "131"
+    },
+    {
+        "location-name": "Paris",
+        "dpt": "75",
+        "latitude": 48.822,
+        "longitude": 2.338,
+        "altitude": "75"
+    },
+    {
+        "location-name": "Villar St Pancrace",
+        "dpt": "05",
+        "latitude": 44.88,
+        "longitude": 6.64,
+        "altitude": "1310"
+    }
+]
