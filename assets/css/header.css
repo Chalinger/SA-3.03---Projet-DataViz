@@ -1,5 +1,5 @@
 header{
-    height: 85vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -25,4 +25,5 @@ header h1 {
     align-items: center;
     justify-content: center;
     flex: 1;
+    transform: translateY(-10vh);
 }
