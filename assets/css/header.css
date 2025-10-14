@@ -1,5 +1,7 @@
 header{
-    height: 100dvh;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
 }
 nav {
     padding: 0;
@@ -15,4 +17,12 @@ nav ul {
     list-style: none;
     gap: 5px;
     margin-left: auto;
+}
+header h1 {
+    font-size: 2rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
 }
