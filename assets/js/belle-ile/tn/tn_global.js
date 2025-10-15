@@ -1,6 +1,6 @@
  import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
-        d3.json("../../api/belle-ile/tx/TX_BELLE-ILE.json").then(rawData => {
+        d3.json("../../api/belle-ile/tn/TN_BELLE-ILE.json").then(rawData => {
             const parse = d3.timeParse("%Y%m");
 
             const data = rawData.map(d => ({
@@ -8,12 +8,10 @@
                 value: +d.VALEUR
             }));
 
-            const onlyJune = data.filter(d => d.date.getMonth() === 5);
+            data.sort((a, b) => a.date - b.date);
 
-            onlyJune.sort((a, b) => a.date - b.date);
-
-            const step = 2;
-            const filtered = onlyJune.filter((_, i) => i % step === 0);
+            const step = 6;
+            const filtered = data.filter((_, i) => i % step === 0);
 
             const margin = { top: 20, right: 20, bottom: 40, left: 60 };
             const width = 800 - margin.left - margin.right;
@@ -30,38 +28,22 @@
             const svg = d3.select("#graph_tx_aulnois_ss_laon")
                 .append("svg")
                 .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-                .call(zoom);
-            
-            const defs = svg.append("defs");
-            defs.append("clipPath")
-                .attr("id", "clip-tx")
-                .append("rect")
-                .attr("x", 0)
-                .attr("y", 0)
-                .attr("width", width)
-                .attr("height", height);
+                .attr("height", height + margin.top + margin.bottom);
 
             const g = svg.append("g")
                 .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-            const plot = g.append("g")
-                .attr("class", "plot")
-                .attr("clip-path", "url(#clip-tx)");
 
             const line = d3.line()
                 .x(d => x(d.date))
                 .y(d => y(d.value))
                 .curve(d3.curveMonotoneX);
 
-            plot.append("path")
+            g.append("path")
                 .datum(filtered)
-                .attr("class", "line")
                 .attr("fill", "none")
                 .attr("stroke", "#1976d2")
                 .attr("stroke-width", 2)
                 .attr("d", line);
-
 
             const xAxis = d3.axisBottom(x)
                 .ticks(d3.timeYear.every(5))
@@ -70,27 +52,9 @@
             const yAxis = d3.axisLeft(y);
 
             g.append("g")
-                .attr("class", "x-axis")
                 .attr("transform", `translate(0, ${height})`)
                 .call(xAxis);
 
             g.append("g")
                 .call(yAxis);
-            
-              function zoom(svg) {
-    const extent = [[margin.left, margin.top], [width - margin.right, height - margin.bottom]];
-
-    svg.call(d3.zoom()
-        .scaleExtent([1, 8])
-        .translateExtent(extent)
-        .extent(extent)
-        .on("zoom", zoomed));
-
-    function zoomed(event) {
-      x.range([0, width].map(d => event.transform.applyX(d)));
-
-    g.select(".line").attr("d", line);
-    g.select(".x-axis").call(xAxis);
-    }
-  }
         });
