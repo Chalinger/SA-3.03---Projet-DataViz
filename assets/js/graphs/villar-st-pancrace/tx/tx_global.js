@@ -22,29 +22,44 @@
                 .range([0, width]);
 
             const y = d3.scaleLinear()
-                .domain([15, 30])
+                .domain([-3, 30])
                 .range([height, 0]);
 
             const svg = d3.select("#graph_tx_aulnois_ss_laon")
                 .append("svg")
                 .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom);
+                .attr("height", height + margin.top + margin.bottom)
+                .call(zoom);
+            
+            const defs = svg.append("defs");
+            defs.append("clipPath")
+                .attr("id", "clip-tx")
+                .append("rect")
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("width", width)
+                .attr("height", height);
 
             const g = svg.append("g")
                 .attr("transform", `translate(${margin.left}, ${margin.top})`);
+            
+            const plot = g.append("g")
+                .attr("class", "plot")
+                .attr("clip-path", "url(#clip-tx)");
 
             const line = d3.line()
                 .x(d => x(d.date))
                 .y(d => y(d.value))
                 .curve(d3.curveMonotoneX);
 
-            g.append("path")
+            plot.append("path")
                 .datum(filtered)
+                .attr("class", "line")
                 .attr("fill", "none")
                 .attr("stroke", "#1976d2")
                 .attr("stroke-width", 2)
                 .attr("d", line);
-
+            
             const xAxis = d3.axisBottom(x)
                 .ticks(d3.timeYear.every(5))
                 .tickFormat(d3.timeFormat("%Y"));
@@ -57,4 +72,22 @@
 
             g.append("g")
                 .call(yAxis);
+
+            function zoom(svg) {
+    const extent = [[margin.left, margin.top], [width - margin.right, height - margin.bottom]];
+
+    svg.call(d3.zoom()
+        .scaleExtent([1, 8])
+        .translateExtent(extent)
+        .extent(extent)
+        .on("zoom", zoomed));
+
+    function zoomed(event) {
+      x.range([0, width].map(d => event.transform.applyX(d)));
+
+    g.select(".line").attr("d", line);
+    g.select(".x-axis").call(xAxis);
+    }
+  }
         });
+    
