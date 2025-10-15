@@ -12,7 +12,7 @@
 
             onlyJune.sort((a, b) => a.date - b.date);
 
-            const step = 6;
+            const step = 1;
             const filtered = onlyJune.filter((_, i) => i % step === 0);
 
             const margin = { top: 20, right: 20, bottom: 40, left: 60 };
