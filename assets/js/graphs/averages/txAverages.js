@@ -40,7 +40,7 @@ function averageByDecades(locationLink, stepMin, stepMax, div) {
 
             // Remplacer l'échelle temporelle par une échelle catégorielle basée sur l'année (décennie)
             const x = d3.scaleBand()
-                .domain(filtered.map(d => d.date.getFullYear())) // clé discrète = année
+                .domain(filtered.map(d => d.date.getFullYear()))
                 .range([0, width])
                 .padding(0.2);
 
@@ -51,7 +51,7 @@ function averageByDecades(locationLink, stepMin, stepMax, div) {
             const svg = d3.select(`#${div}`)
                 .append("svg")
                 .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom); // retirer .call(zoom) pour le bar chart
+                .attr("height", height + margin.top + margin.bottom);
             
             const defs = svg.append("defs");
             defs.append("clipPath")
@@ -69,20 +69,50 @@ function averageByDecades(locationLink, stepMin, stepMax, div) {
                 .attr("class", "plot")
                 .attr("clip-path", "url(#clip-tx)");
 
-            // Remplacer la ligne par des barres correctement espacées
-            plot.selectAll(".bar")
+            // Replace the chained rect.append("text") with a grouped bar + label
+            const bars = plot.selectAll(".bar")
                 .data(filtered)
                 .enter()
-                .append("rect")
+                .append("g")
                 .attr("class", "bar")
-                .attr("x", d => x(d.date.getFullYear()))
+                .attr("transform", d => `translate(${x(d.date.getFullYear())}, 0)`);
+            
+            bars.append("rect")
+                .attr("x", 0)
                 .attr("y", d => y(d.value))
                 .attr("width", x.bandwidth())
                 .attr("height", d => height - y(d.value))
-                .attr("fill", "#1976d2");
+                .attr("fill", "rgba(25, 118, 210, 0.25)")
+                .attr("rx", 5)
+                .attr("ry", 5)
+                .on("mouseover", (event, d) => {
+                    d3.select(event.target)
+                        .transition()
+                        .duration(200)
+                        .attr("fill", "rgba(25, 118, 210, 1)");
+                    d3.select(event.target.parentNode)
+                        .select("text")
+                        .attr("display", "block");
+                })
+                .on("mouseout", (event, d) => {
+                    d3.select(event.target)
+                        .transition()
+                        .duration(200)
+                        .attr("fill", "rgba(25, 118, 210, 0.25)");
+                    d3.select(event.target.parentNode)
+                        .select("text")
+                        .attr("display", "none");
+                });
+            
+            bars.append("text")
+                .attr("x", x.bandwidth() / 2)
+                .attr("y", d => Math.max(0, y(d.value) - 5)) // keep inside clip
+                .attr("text-anchor", "middle")
+                .attr("fill", "black")
+                .attr("font-size", "12px")
+                .attr("display", "none")
+                .text(d => (d.value != null && !Number.isNaN(d.value)) ? d.value.toFixed(2) + "°C" : "");
 
-
-            // Axe X adapté à scaleBand (affiche les années)
             const xAxis = d3.axisBottom(x)
                 .tickValues(x.domain())
                 .tickFormat(d3.format("d"));
@@ -98,4 +128,4 @@ function averageByDecades(locationLink, stepMin, stepMax, div) {
                 .call(yAxis);
         });
     }
-averageByDecades("PARIS-MTSOURIS", 0, 25, "graph_tx_aulnois_ss_laon")
+averageByDecades("AULNOIS-SS-LAON", 0, 25, "graph_tx_aulnois_ss_laon")
