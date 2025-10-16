@@ -2,11 +2,11 @@
 
  function rawValueByDecade(locationLink, dateMin, dateMax, stepMin, stepMax, div) {
     const objectLocationLink = {
-        "AULNOIS-SS-LAON": "../../api/aulnois-ss-laon/tx/TX_AULNOIS-SS-LAON.json",
-        "BELLE-ILE": "../../api/belle-ile/tx/TX_BELLE-ILE.json",
-        "CAVILLARGUES": "../../api/cavillargues/tx/TX_CAVILLARGUES.json",
-        "PARIS-MTSOURIS": "../../api/paris-mtsouris/tx/TX_PARIS-MTSOURIS.json",
-        "VILLAR-ST-PANCRACE": "../../api/villar-st-pancrace/tx/TX_VILLAR-ST-PANCRACE.json"
+        "AULNOIS-SS-LAON": "./api/aulnois-ss-laon/tx/TX_AULNOIS-SS-LAON.json",
+        "BELLE-ILE": "./api/belle-ile/tx/TX_BELLE-ILE.json",
+        "CAVILLARGUES": "./api/cavillargues/tx/TX_CAVILLARGUES.json",
+        "PARIS-MTSOURIS": "./api/paris-mtsouris/tx/TX_PARIS-MTSOURIS.json",
+        "VILLAR-ST-PANCRACE": "./api/villar-st-pancrace/tx/TX_VILLAR-ST-PANCRACE.json"
     }
         d3.json(objectLocationLink[locationLink]).then(rawData => {
             const parse = d3.timeParse("%Y%m");

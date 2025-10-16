@@ -3,11 +3,11 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 function monthlyStats(locationLink, month, stepMin, stepMax, div){
 
     const objectApiLinksForAllLocations = {
-        "AULNOIS-SS-LAON": "../../api/aulnois-ss-laon/tx/TX_AULNOIS-SS-LAON.json",
-        "BELLE-ILE": "../../api/belle-ile/tx/TX_BELLE-ILE.json",
-        "CAVILLARGUES": "../../api/cavillargues/tx/TX_CAVILLARGUES.json",
-        "PARIS": "../../api/paris-mtsouris/tx/TX_PARIS-MTSOURIS",
-        "VILLAR-ST-PANCRACE": "../../api/villar-st-pancrace/tx/TX_VILLAR-ST-PANCRACE.json"
+        "AULNOIS-SS-LAON": "./api/aulnois-ss-laon/tx/TX_AULNOIS-SS-LAON.json",
+        "BELLE-ILE": "./api/belle-ile/tx/TX_BELLE-ILE.json",
+        "CAVILLARGUES": "./api/cavillargues/tx/TX_CAVILLARGUES.json",
+        "PARIS-MTSOURIS": "./api/paris-mtsouris/tx/TX_PARIS-MTSOURIS.json",
+        "VILLAR-ST-PANCRACE": "./api/villar-st-pancrace/tx/TX_VILLAR-ST-PANCRACE.json"
     };
 
 d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
