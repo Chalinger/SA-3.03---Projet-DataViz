@@ -69,7 +69,7 @@ d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
         .datum(filtered)
         .attr("class", "line")
         .attr("fill", "none")
-        .attr("stroke", "#1976d2")
+        .attr("stroke", "rgba(244, 68, 46, 1)")
         .attr("stroke-width", 2)
         .attr("d", line);
 

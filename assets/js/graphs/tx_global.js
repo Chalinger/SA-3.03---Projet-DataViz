@@ -64,7 +64,7 @@ function txGLobal(locationLink, stepMin, stepMax, div) {
                 .datum(filtered)
                 .attr("class", "line")
                 .attr("fill", "none")
-                .attr("stroke", "#1976d2")
+                .attr("stroke", "#f4442e")
                 .attr("stroke-width", 2)
                 .attr("d", line);
             

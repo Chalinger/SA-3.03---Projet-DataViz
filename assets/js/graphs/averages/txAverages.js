@@ -82,14 +82,14 @@ function averageByDecades(locationLink, stepMin, stepMax, div) {
                 .attr("y", d => y(d.value))
                 .attr("width", x.bandwidth())
                 .attr("height", d => height - y(d.value))
-                .attr("fill", "rgba(25, 118, 210, 0.25)")
+                .attr("fill", "rgba(244, 68, 46, 0.25)")
                 .attr("rx", 5)
                 .attr("ry", 5)
                 .on("mouseover", (event, d) => {
                     d3.select(event.target)
                         .transition()
                         .duration(200)
-                        .attr("fill", "rgba(25, 118, 210, 1)");
+                        .attr("fill", "rgba(244, 68, 46, 1)");
                     d3.select(event.target.parentNode)
                         .select("text")
                         .attr("display", "block");
@@ -98,7 +98,7 @@ function averageByDecades(locationLink, stepMin, stepMax, div) {
                     d3.select(event.target)
                         .transition()
                         .duration(200)
-                        .attr("fill", "rgba(25, 118, 210, 0.25)");
+                        .attr("fill", "rgba(244, 68, 46, 0.25)");
                     d3.select(event.target.parentNode)
                         .select("text")
                         .attr("display", "none");
@@ -111,6 +111,7 @@ function averageByDecades(locationLink, stepMin, stepMax, div) {
                 .attr("fill", "black")
                 .attr("font-size", "12px")
                 .attr("display", "none")
+                .attr("font-family", "sans-serif")
                 .text(d => (d.value != null && !Number.isNaN(d.value)) ? d.value.toFixed(2) + "°C" : "");
 
             const xAxis = d3.axisBottom(x)
