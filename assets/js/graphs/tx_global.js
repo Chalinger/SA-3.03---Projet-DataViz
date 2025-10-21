@@ -64,7 +64,7 @@ function txGLobal(locationLink, stepMin, stepMax, div) {
                 .datum(filtered)
                 .attr("class", "line")
                 .attr("fill", "none")
-                .attr("stroke", "#f4442e")
+                .attr("stroke", "#f4442")
                 .attr("stroke-width", 2)
                 .attr("d", line);
             
@@ -99,4 +99,4 @@ function txGLobal(locationLink, stepMin, stepMax, div) {
   }
         });
     }
-txGLobal("PARIS-MTSOURIS", -3, 30, "graph_tx_aulnois_ss_laon");
+txGLobal("AULNOIS-SS-LAON", -3, 30, "graph_tx_aulnois_ss_laon");
