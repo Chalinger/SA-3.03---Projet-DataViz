@@ -84,7 +84,7 @@ getData("AULNOIS-SS-LAON").then(data => console.log(`pente de régression linéa
 
 function displayLinearRegressionSlope(data, elementId) {
     getData(data).then(slope => {
-        document.getElementById(elementId).textContent = `${slope > 0 ? "+" : ""}${slope}°C/année`;
+        document.getElementById(elementId).textContent = `${slope > 0 ? "+" : ""}${slope}°C/an`;
     });
 }
 displayLinearRegressionSlope("AULNOIS-SS-LAON", "average-evolution_aulnois-ss-laon");
