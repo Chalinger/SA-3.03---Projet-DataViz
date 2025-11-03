@@ -80,6 +80,13 @@ async function getData(data) {
   // 8. Retourne la pente
   return b.toFixed(3);
 }
-getData("VILLAR-ST-PANCRACE").then(data => console.log(`pente de régression linéaire à Villar-ST-Pancrace (depuis 1961): ${data}`));
+getData("AULNOIS-SS-LAON").then(data => console.log(`pente de régression linéaire à Aulnois-SS-Laon (depuis 1961): ${data}`));
+
+function displayLinearRegressionSlope(data, elementId) {
+    getData(data).then(slope => {
+        document.getElementById(elementId).textContent = `${slope > 0 ? "+" : ""}${slope}°C/année`;
+    });
+}
+displayLinearRegressionSlope("AULNOIS-SS-LAON", "average-evolution_aulnois-ss-laon");
 
 // SOURCE: https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire 

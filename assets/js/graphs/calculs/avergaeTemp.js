@@ -32,16 +32,16 @@ const jsonFiles = {
         const txJson = await txData.json();
         const tnJson = await tnData.json();
 
-        const txFirstValue = txJson[0].VALEUR;
-        const tnFirstValue = tnJson[0].VALEUR;
+        const tnValues = tnJson.map(entry => entry.VALEUR);
+        const txValues = txJson.map(entry => entry.VALEUR);
 
-        const txLastValue = txJson[txJson.length - 1].VALEUR;
-        const tnLastValue = tnJson[tnJson.length - 1].VALEUR;
+        const averageTemp = (tnValues.reduce((a, b) => a + b, 0) + txValues.reduce((a, b) => a + b, 0)) / (tnValues.length + txValues.length);
 
-        const txDifference = txLastValue - txFirstValue;
-        const tnDifference = tnLastValue - tnFirstValue;
-        const averageDifference = (txDifference + tnDifference) / 2;
-
-        return averageDifference;
+        return averageTemp.toFixed(2);
     }
-    getData("AULNOIS-SS-LAON").then(data => console.log(`difference moyenne à Cavillaragues (depuis 1961): ${data > 0 ? "+" : ""}${data}°C`));
+    getData("AULNOIS-SS-LAON").then(data => console.log(`Température moyenne à Aulnois sous Laon (depuis 1961): ${data > 0 ? "+" : ""}${data}°C`));
+
+    function displayAverageTemp(data, elementId) {
+        document.getElementById(elementId).textContent = `${data > 0 ? "+" : ""}${data}°C`;
+    }
+    getData("AULNOIS-SS-LAON").then(data => displayAverageTemp(data, "average-temp_aulnois-ss-laon"));

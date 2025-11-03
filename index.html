@@ -24,13 +24,34 @@
     </header>
     <section id="graph1">
         <h2>Moyennes déceniales des températures maximales moyenne à Aulnois sous Laon</h2>
-         <div id="graph_tx_aulnois_ss_laon_jan" class="svg"></div>
-        <div id="graph_tx_aulnois_ss_laon" class="svg"></div>
-
+        <div id="cards">
+            <div id="card_average-temp">
+                <h3>Température moyenne</h3>
+                <p id="average-temp_aulnois-ss-laon"></p>
+            </div>
+            <div id="card_average-evolution">
+                <h3>Évolution moyenne</h3>
+                <p id="average-evolution_aulnois-ss-laon">
+                </p>
+            </div>
+            <div id="card_hottest-year">
+                <h3>Année la plus chaude</h3>
+                <p id="hottest-year_aulnois-ss-laon"></p>
+                <p id="hottest-temp_aulnois-ss-laon"></p>
+            </div>
+            <div id="card_coldest-year">
+                <h3>Année la plus froide</h3>
+                <p id="coldest-year_aulnois-ss-laon"></p>
+                <p id="coldest-temp_aulnois-ss-laon"></p>
+            </div>
+        </div>
+        <div id="graph_tx_aulnois_ss_laon_june" class="svg"></div>
     </section>
     <!-- <script type="module" src="assets/js/graphs/byMonth/tx_monthly.js"></script> -->
     <script type="module" src="assets/js/graphs/byMonth/tx_monthly.js"></script>
     <script type="module" src="assets/js/graphs/calculs/linearRegressionSlope.js"></script>
+    <script type="module" src="assets/js/graphs/calculs/avergaeTemp.js"></script>
+    <script type="module" src="assets/js/graphs/calculs/hottestYear.js"></script>
     <script type="module" src="assets/js/features/app.js"></script>
 </body>
 

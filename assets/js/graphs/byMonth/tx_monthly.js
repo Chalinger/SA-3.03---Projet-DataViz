@@ -123,4 +123,4 @@ d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
     }
 });
 }
-monthlyStats("BELLE-ILE", 5, 15, 25, "graph_tx_aulnois_ss_laon_jan");
+monthlyStats("AULNOIS-SS-LAON", 5, 15, 25, "graph_tx_aulnois_ss_laon_june");
