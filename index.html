@@ -23,7 +23,8 @@
         </nav>
         <h1>L'Évolution du climat en <br> france sur toute une vie</h1>
     </header>
-    <section id="graph1">
+    <!-- NOM DES CLASSES SENSIBLES À LA CASSE! NE PAS STYLISER SUR LE NOM DES LOCATIONS! -->
+    <section id="graph1 aulnois-ss-laon">
         <h2>Moyennes déceniales des températures maximales moyenne à Aulnois sous Laon</h2>
         <div id="cards">
             <div class="card" id="card_average-temp">
@@ -46,14 +47,24 @@
                 <p class="secondary-para" id="coldest-temp_aulnois-ss-laon"></p>
             </div>
         </div>
-        <div id="graph_tx_aulnois_ss_laon_june" class="svg"></div>
+        <p class="info-para">L'évolution moyenne annuelle est calculée grâce à la régression linéaire.</p>
+        <div class="graphs aulnois-ss-laon">
+            <div class="tx-tn-buttons">
+                <button class="tx-button active">Températures maximales moyennes</button>
+                <button class="tn-button">Températures minimales moyennes</button>
+            </div>
+            <div id="graph_tx_aulnois_ss_laon" class="tx-graph aulnois-ss-laon june svg"></div>
+            <div id="graph_tn_aulnois_ss_laon" class="tn-graph aulnois-ss-laon june hidden svg"></div>
+        </div>
     </section>
     <!-- <script type="module" src="assets/js/graphs/byMonth/tx_monthly.js"></script> -->
     <script type="module" src="assets/js/graphs/byMonth/tx_monthly.js"></script>
+    <script type="module" src="assets/js/graphs/byMonth/tn_monthly.js"></script>
     <script type="module" src="assets/js/graphs/calculs/linearRegressionSlope.js"></script>
     <script type="module" src="assets/js/graphs/calculs/avergaeTemp.js"></script>
     <script type="module" src="assets/js/graphs/calculs/hottestYear.js"></script>
     <script type="module" src="assets/js/features/app.js"></script>
+    <script type="module" src="assets/js/features/buttonsAction.js"></script>
 </body>
 
 </html>

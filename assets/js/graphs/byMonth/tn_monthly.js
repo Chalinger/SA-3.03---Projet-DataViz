@@ -3,11 +3,11 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 function monthlyStats(locationLink, month, stepMin, stepMax, div){
 
     const objectApiLinksForAllLocations = {
-        "AULNOIS-SS-LAON": "./api/aulnois-ss-laon/tx/TX_AULNOIS-SS-LAON.json",
-        "BELLE-ILE": "./api/belle-ile/tx/TX_BELLE-ILE.json",
-        "CAVILLARGUES": "./api/cavillargues/tx/TX_CAVILLARGUES.json",
-        "PARIS-MTSOURIS": "./api/paris-mtsouris/tx/TX_PARIS-MTSOURIS.json",
-        "VILLAR-ST-PANCRACE": "./api/villar-st-pancrace/tx/TX_VILLAR-ST-PANCRACE.json"
+        "AULNOIS-SS-LAON": "./api/aulnois-ss-laon/tn/TN_AULNOIS-SS-LAON.json",
+        "BELLE-ILE": "./api/belle-ile/tn/TN_BELLE-ILE.json",
+        "CAVILLARGUES": "./api/cavillargues/tn/TN_CAVILLARGUES.json",
+        "PARIS-MTSOURIS": "./api/paris-mtsouris/tn/TN_PARIS-MTSOURIS.json",
+        "VILLAR-ST-PANCRACE": "./api/villar-st-pancrace/tn/TN_VILLAR-ST-PANCRACE.json"
     };
 
 d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
@@ -123,4 +123,4 @@ d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
     }
 });
 }
-monthlyStats("AULNOIS-SS-LAON", 5, 15, 25, "graph_tx_aulnois_ss_laon");
+monthlyStats("AULNOIS-SS-LAON", 5, 0, 20, "graph_tn_aulnois_ss_laon");

@@ -1,9 +1,12 @@
 :root {
     --bg-color: #fcfced;
     --text-color: #020122;
+    --secondary-text-color: rgba(2, 1, 34, 0.5);
+    --secondary-text-color-white: hsla(243, 56%, 94%, 0.5);
     --link-color: #f4442e;
     --link-color-hover: #f4442e;
     --accent-color: #fc9e4f;
+    --accent-color-opacity: rgba(252, 158, 79, 0.5);
 }
 * {
     box-sizing: border-box;

@@ -11,8 +11,23 @@
     height: 120px;
     display: flex;
     flex-direction: column;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-opacity);
+    color: var(--text-color);
+    border: 1px solid var(--link-color);
+    // border: 2px solid var(--accent-color);
     border-radius: 10px;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.1);
+    background-color: var(--link-color);
+    // background-color: var(--accent-color);
+    color: var(--bg-color);
+    cursor: default;
+}
+.card:hover .secondary-para{
+    color: var(--secondary-text-color-white);
 }
 .card h3 {
     font-size: 0.95rem;
@@ -25,7 +40,11 @@
     font-style: normal;
 }
 .card .secondary-para{
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-family: "Satoshi-Light";
-    font-style: normal;
+    font-style: italic;
+    color: var(--secondary-text-color);
+}
+.hidden {
+    display: none;
 }
