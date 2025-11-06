@@ -7,8 +7,10 @@
     --link-color-hover: #f4442e;
     --accent-color: #fc9e4f;
     --accent-color-opacity: rgba(252, 158, 79, 0.5);
+
+    --box-shadow: box-shadow: 0 0 35px 0 var(--secondary-text-color);
 }
-* {
+*{
     box-sizing: border-box;
     padding: 0;
     margin: 0;

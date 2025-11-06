@@ -26,13 +26,21 @@
     color: var(--bg-color);
     cursor: default;
 }
+.card .secondary-para {
+    transition: all 0.3s ease-in-out;
+}
 .card:hover .secondary-para{
     color: var(--secondary-text-color-white);
 }
 .card h3 {
     font-size: 0.95rem;
-    font-family: "Satoshi-Regular";
+    font-family: "Satoshi-Light";
     font-style: normal;
+    color: var(--secondary-text-color);
+    transition: all 0.3s ease-in-out;
+}
+.card:hover h3 {
+    color: var(--secondary-text-color-white);
 }
 .card p {
     font-size: 1.5rem;
