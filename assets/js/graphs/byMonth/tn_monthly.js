@@ -12,7 +12,7 @@ function monthlyStats(locationLink, month, stepMin, stepMax, div){
 
 d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
     const parse = d3.timeParse("%Y%m");
-
+    
     const data = rawData.map(d => ({
         date: parse(d.DateYYYYMM),
         value: +d.VALEUR
@@ -131,5 +131,37 @@ const tnDivId = "graph_tn_aulnois_ss_laon";
 select.addEventListener("change", (event) => {
     const selectedLocation = event.target.value;
     d3.select(`#${tnDivId}`).select("svg").remove();
-    monthlyStats(selectedLocation, 0, -10, 10, tnDivId);
+
+    const handleMinTempForEachLoc = (location) => {
+        if (location == "CAVILLARGUES") {
+            return -7;
+        } if (location == "PARIS-MTSOURIS") {
+            return -5;
+        }  if (location == "VILLAR-ST-PANCRACE") {
+            return -15;
+        }
+        if (location == "BELLE-ILE") {
+            return -4;
+        }
+        else {
+            return -10
+        }
+    }
+    const handleMaxTempForEachLoc =  (location) => {
+        if(location == "CAVILLARGUES") {
+            return 6;
+        } if (location == "PARIS-MTSOURIS") {
+            return 6;
+        } if (location == "VILLAR-ST-PANCRACE") {
+            return 2;
+        }
+        if (location == "BELLE-ILE") {
+            return 10;
+        }
+         else {
+            return 19;
+        }
+    }
+
+    monthlyStats(selectedLocation, 0, handleMinTempForEachLoc(selectedLocation), handleMaxTempForEachLoc(selectedLocation), tnDivId);
 });

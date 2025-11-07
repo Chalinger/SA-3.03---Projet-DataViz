@@ -126,10 +126,28 @@ d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
 monthlyStats("AULNOIS-SS-LAON", 5, 15, 25, "graph_tx_aulnois_ss_laon");
 
 const select = document.getElementById("location-select");
-const txDivId = "graph_tx_aulnois_ss_laon";
+let txDivId = "graph_tx_aulnois_ss_laon";
 
 select.addEventListener("change", (event) => {
     const selectedLocation = event.target.value;
     d3.select(`#${txDivId}`).select("svg").remove();
-    monthlyStats(selectedLocation, 5, 15, 25, txDivId);
-});
+    const handleMinTempForEachLoc = (location) => {
+        if (location == "CAVILLARGUES") {
+            return 20;
+        } if (location == "PARIS-MTSOURIS" || location == "VILLAR-ST-PANCRACE") {
+            return 17;
+        } else {
+            return 15
+        }
+    }
+    const handleMaxTempForEachLoc =  (location) => {
+        if(location == "CAVILLARGUES") {
+            return 35;
+        } if (location == "PARIS-MTSOURIS"  || location == "VILLAR-ST-PANCRACE") {
+            return 30;
+        } else {
+            return 25;
+        }
+    }
+    monthlyStats(selectedLocation, 5, handleMinTempForEachLoc(selectedLocation), handleMaxTempForEachLoc(selectedLocation), txDivId);
+}); 
