@@ -1,0 +1,25 @@
+#storytelling {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+#storytelling {
+    margin-bottom: 40px;
+}
+.storytelling-part {
+    width: 70%;
+    margin-bottom: 100px;
+}
+.odd {
+    margin-left: auto;
+}
+#storytelling ul li {
+    list-style: disc;
+    margin-left: 40px;
+}
+#storytelling ul{
+    margin: 10px 0 10px 0;
+}
+h2{
+    margin: 0;
+}

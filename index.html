@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/svg.css">
     <link rel="stylesheet" href="assets/css/graph_section.css">
+    <link rel="stylesheet" href="assets/css/storytelling.css">
     <title>ClimEvo</title>
 </head>
 
@@ -23,9 +24,51 @@
         </nav>
         <h1>L'Évolution du climat en <br> france sur toute une vie</h1>
     </header>
+    <section id="storytelling">
+        <div class="storytelling-part even">
+        <h2>Une vie comme unité de temps</h2>
+        <p>
+            En 1961, la France enregistrait en moyenne des hiver plus rigoureux, des étés plus doux. <br> 
+            63 ans plus tard, en 2024, une génération entière à grandi, travaillé, vieilli, pendant que le climat, lui aussi, changeait. <br>
+            Ce projet retrace l'évolution du climat français à l'échelle d'une vie humaine, pour comprendre concrètement ce que "le changement climatique" signifie quand on le vit année après année. 
+        </p>
+        </div>
+        <div class="storytelling-part odd">
+        <h2>Introduction du projet</h2>
+        <p>
+            À partir des données officielle de Météo France, nous avons observé l'évolution des température moyenne dans plusieurs régions françaises :  du nord au sud, des côtes au montagnes. <br>
+            Chaque graphique raconte une histoire différente; certaines zone se rechauffent plus que d'autres. <br>
+            Mais toutes montre une tendance commune : la France à changé de climat au fil d'une vie humaine.
+        </p>
+        </div>
+        <div class="storytelling-part even">
+        <h2>
+            Et si tu étais né en 1961?
+        </h2>
+        <p>
+            Si tu étais né en 1961, tu aurais connu:
+        </p>
+            <ul>
+                <li>Des hivers ou la neige tombait abondamment dans les régions montagneuse</li>
+                <li>Des été ou dépasser 30°C était exceptionnel.</li>
+                <li>Des printemps plus lents, plus frais.</li>
+            </ul>
+            <p>
+                En 2024, à 63 ans, tu vivrais dans une France plus chaude de 2 à 4°C en moyenne, avec des vagues de chaleur estivales devenues la norme. <br>
+                En une vie, ton pays s'est rechauffé aussi vite qu'il ne s'était jamais refroidi depuis des millénaires. 
+            </p>
+        </div>
+    </section>
     <!-- NOM DES CLASSES SENSIBLES À LA CASSE! NE PAS STYLISER SUR LE NOM DES LOCATIONS! -->
     <section id="graph1 aulnois-ss-laon">
-        <h2>Moyennes déceniales des températures maximales moyenne à Aulnois sous Laon</h2>
+        <h2>Moyennes déceniales des températures maximales moyenne à <select name="location" id="location-select">
+            <option value="AULNOIS-SS-LAON">Aulnois sous Laon</option>
+            <option value="BELLE-ILE">Belle-Ile</option>
+            <option value="CAVILLARGUES">Cavillargues</option>
+            <option value="PARIS-MTSOURIS">Paris Mt Souris</option>
+            <option value="VILLAR-ST-PANCRACE">Villar St Pancrace</option>
+
+        </select></h2>
         <div id="cards">
             <div class="card" id="card_average-temp">
                 <h3>Température moyenne</h3>

@@ -124,3 +124,12 @@ d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
 });
 }
 monthlyStats("AULNOIS-SS-LAON", 5, 15, 25, "graph_tx_aulnois_ss_laon");
+
+const select = document.getElementById("location-select");
+const txDivId = "graph_tx_aulnois_ss_laon";
+
+select.addEventListener("change", (event) => {
+    const selectedLocation = event.target.value;
+    d3.select(`#${txDivId}`).select("svg").remove();
+    monthlyStats(selectedLocation, 5, 15, 25, txDivId);
+});

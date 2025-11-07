@@ -123,4 +123,13 @@ d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
     }
 });
 }
-monthlyStats("AULNOIS-SS-LAON", 5, 0, 20, "graph_tn_aulnois_ss_laon");
+monthlyStats("AULNOIS-SS-LAON", 1, -10, 10, "graph_tn_aulnois_ss_laon");
+
+const select = document.getElementById("location-select");
+const tnDivId = "graph_tn_aulnois_ss_laon";
+
+select.addEventListener("change", (event) => {
+    const selectedLocation = event.target.value;
+    d3.select(`#${tnDivId}`).select("svg").remove();
+    monthlyStats(selectedLocation, 0, -10, 10, tnDivId);
+});
