@@ -25,9 +25,15 @@ d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
     const step = 2;
     const filtered = onlyJanuary.filter((_, i) => i % step === 0);
 
-    const margin = { top: 20, right: 20, bottom: 40, left: 60 };
-    const width = 800 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
+    // Garde: pas de données -> affiche un message et stoppe
+    if (filtered.length === 0) {
+        d3.select(`#${div}`).append("p").attr("class", "no-data").text("Pas de données pour cette sélection.");
+        return;
+    }
+
+    const margin = { top: 20, right: 20, bottom: 40, left: 20 };
+    const width = 600 - margin.left - margin.right;
+    const height = 300 - margin.top - margin.bottom;
 
     const x = d3.scaleTime()
         .domain(d3.extent(filtered, d => d.date))
@@ -44,12 +50,12 @@ d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
         .call(zoom);
     
     const defs = svg.append("defs");
+    const clipId = `clip-${div}`;
     defs.append("clipPath")
-        .attr("id", "clip-tx")
+        .attr("id", clipId)
         .append("rect")
         .attr("x", 0)
         .attr("y", 0)
-        // Démarre masqué pour l’animation de révélation
         .attr("width", 0)
         .attr("height", height);
 
@@ -58,7 +64,7 @@ d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
 
     const plot = g.append("g")
         .attr("class", "plot")
-        .attr("clip-path", "url(#clip-tx)");
+        .attr("clip-path", `url(#${clipId})`);
 
     const line = d3.line()
         .x(d => x(d.date))
@@ -83,14 +89,13 @@ d3.json(objectApiLinksForAllLocations[locationLink]).then(rawData => {
         .ease(d3.easeCubic)
         .attr("stroke-dashoffset", 0);
 
-    // Animation 2: révélation via clipPath (optionnelle, peut être supprimée si vous gardez la 1)
-    defs.select("#clip-tx").select("rect")
+    // Animation 2: révélation via clipPath
+    defs.select(`#${clipId}`).select("rect")
         .transition()
-        .delay(150) // légère synchro avec la ligne
+        .delay(150)
         .duration(2500)
         .ease(d3.easeCubic)
         .attr("width", width);
-
 
     const xAxis = d3.axisBottom(x)
         .ticks(d3.timeYear.every(5))
@@ -127,10 +132,33 @@ monthlyStats("AULNOIS-SS-LAON", 5, 15, 25, "graph_tx_aulnois_ss_laon");
 
 const select = document.getElementById("location-select");
 let txDivId = "graph_tx_aulnois_ss_laon";
+let location = "AULNOIS-SS-LAON-text";
+
+function getLocationTextElement(loc) {
+    return document.querySelector(`.${loc.toLowerCase()}`) || document.querySelector(`.${loc}`);
+}
+
+let locationDiv = getLocationTextElement(location);
 
 select.addEventListener("change", (event) => {
     const selectedLocation = event.target.value;
+
+    if (locationDiv) {
+        locationDiv.classList.add("text-hidden");
+    }
+
+    location = selectedLocation + "-text";
+    locationDiv = getLocationTextElement(location);
+
+    if (locationDiv) {
+        locationDiv.classList.remove("text-hidden");
+    } else {
+        console.error(`No text element found for location: ${selectedLocation}`);
+    }
+
     d3.select(`#${txDivId}`).select("svg").remove();
+    d3.select(`#${txDivId}`).selectAll(".no-data").remove();
+
     const handleMinTempForEachLoc = (location) => {
         if (location == "CAVILLARGUES") {
             return 20;
@@ -150,4 +178,4 @@ select.addEventListener("change", (event) => {
         }
     }
     monthlyStats(selectedLocation, 5, handleMinTempForEachLoc(selectedLocation), handleMaxTempForEachLoc(selectedLocation), txDivId);
-}); 
+});
