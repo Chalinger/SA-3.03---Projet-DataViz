@@ -90,9 +90,26 @@ getData("AULNOIS-SS-LAON").then(data => console.log(`pente de régression linéa
 
 function displayLinearRegressionSlope(data, elementId) {
     getData(data).then(slope => {
-        document.getElementById(elementId).textContent = `${slope > 0 ? "+" : ""}${slope}°C/an`;
+        const el = document.getElementById(elementId);
+        if (!el) {
+            console.warn(`Element with id '${elementId}' not found.`);
+            return;
+        }
+        el.textContent = `${slope > 0 ? "+" : ""}${slope}°C/an`;
     });
 }
-displayLinearRegressionSlope("AULNOIS-SS-LAON", "average-evolution_aulnois-ss-laon");
 
-// SOURCE: https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire 
+displayLinearRegressionSlope("AULNOIS-SS-LAON", "average-evolution");
+
+const select = document.getElementById("location-select");
+// Id par défaut présent dans le DOM
+const defaultElementId = "average-evolution";
+select.addEventListener("change", function() {
+    const selectedLocation = select.value;
+    const targetId = `average-evolution`;
+    const targetEl = document.getElementById(targetId);
+    const elementId = targetEl ? targetId : defaultElementId;
+    displayLinearRegressionSlope(selectedLocation, elementId);
+});
+
+// SOURCE: https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire

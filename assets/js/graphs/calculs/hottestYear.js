@@ -99,5 +99,12 @@ function displayColdestYear(data, elementIdYear, elementIdTemp) {
         document.getElementById(elementIdTemp).textContent = `${coldestYear.split(" ")[3]}`;
     });
 }
-displayColdestYear("AULNOIS-SS-LAON", "coldest-year_aulnois-ss-laon", "coldest-temp_aulnois-ss-laon");
-displayHottestYear("AULNOIS-SS-LAON", "hottest-year_aulnois-ss-laon", "hottest-temp_aulnois-ss-laon");
+displayColdestYear("AULNOIS-SS-LAON", "coldest-year", "coldest-temp");
+displayHottestYear("AULNOIS-SS-LAON", "hottest-year", "hottest-temp");
+
+const select = document.getElementById("location-select");
+select.addEventListener("change", function() {
+    const selectedLocation = select.value;
+    displayColdestYear(selectedLocation, "coldest-year", "coldest-temp");
+    displayHottestYear(selectedLocation, "hottest-year", "hottest-temp");
+})

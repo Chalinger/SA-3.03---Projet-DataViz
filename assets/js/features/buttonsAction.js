@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const button = document.querySelectorAll(".button");
     const selectedLocation = document.querySelector(".AULNOIS-SS-LAON");
     let displayedGrid = document.querySelector(`.${selectedLocation.classList[0]}-grid`);
-    console.log(`displayed grid is ${displayedGrid}`)
 
     button.forEach(button => {
         button.addEventListener("click", function() {

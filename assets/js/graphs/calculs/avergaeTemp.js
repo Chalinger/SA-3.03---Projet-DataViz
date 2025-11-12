@@ -49,4 +49,10 @@ const jsonFiles = {
     function displayAverageTemp(data, elementId) {
         document.getElementById(elementId).textContent = `${data > 0 ? "+" : ""}${data}°C`;
     }
-    getData("AULNOIS-SS-LAON").then(data => displayAverageTemp(data, "average-temp_aulnois-ss-laon"));
+    getData("AULNOIS-SS-LAON").then(data => displayAverageTemp(data, "average-temp"));
+
+    const select = document.getElementById("location-select");
+    select.addEventListener("change", function() {
+        const selectedLocation = select.value;
+        getData(selectedLocation).then(data => displayAverageTemp(data, "average-temp"));
+    })
