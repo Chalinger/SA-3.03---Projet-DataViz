@@ -19,8 +19,7 @@ const jsonFiles = {
         "tx": "./api/villar-st-pancrace/tx/TX_VILLAR-ST-PANCRACE.json",
         "tn": "./api/villar-st-pancrace/tn/TN_VILLAR-ST-PANCRACE.json"
     }
-
-}
+};
 
 async function getDecadeAverages(station) {
     const txUrl = jsonFiles[station].tx;
@@ -93,6 +92,50 @@ getDecadeAverages("VILLAR-ST-PANCRACE").then(decades => {
     console.log("Décennies VILLAR-ST-PANCRACE:", decades);
 });
 
+const stationsIndices = {
+    "AULNOIS-SS-LAON": [0, 2, 3, 5],
+    "BELLE-ILE": [1, 3, 5, 6],
+    "CAVILLARGUES": [0, 2, 4, 6],
+    "PARIS-MTSOURIS": [1, 3, 5, 6],
+    "VILLAR-ST-PANCRACE": [0, 2, 4, 6]
+}
+
+function updateGrid(station, decades) {
+    const grid = document.querySelector(`.${station}-grid`);
+    if (!grid) return console.warn(`No grid found for station: ${station}`);
+
+    const indices = stationsIndices[station];
+    if (!indices) return console.warn(`No indices found for station: ${station}`);
+
+    const temps = indices
+        .map(i => decades[i]?.averageTemp)
+        .filter(t => Number.isFinite(t)); // au lieu de .filter(Boolean)
+
+    const tempInfos = Array.from(grid.querySelectorAll(".temp-info")); // au lieu de ".temp-infos"
+    temps.forEach((temp, i) => {
+        const cell = tempInfos[i];
+        if (!cell) return;
+
+        const value = `${Number(temp).toFixed(1)} °C`;
+        const h1 = cell.querySelector("h1");
+        if (h1) {
+            h1.textContent = value;
+        } else {
+            const newH1 = document.createElement("h1");
+            newH1.textContent = value;
+            cell.innerHTML = "";
+            cell.appendChild(newH1);
+        }
+    });
+}
+
+["AULNOIS-SS-LAON", "BELLE-ILE", "CAVILLARGUES", "PARIS-MTSOURIS", "VILLAR-ST-PANCRACE"]
+  .forEach(station => {
+    getDecadeAverages(station).then(decades => {
+      console.log(`Décennies ${station}:`, decades);
+      updateGrid(station, decades);
+    });
+  });
 
 // function displayDecadeAverages(station, containerId) {
 //     getDecadeAverages(station).then(decades => {

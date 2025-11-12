@@ -12,4 +12,20 @@ document.addEventListener("DOMContentLoaded", function() {
         txElement.classList.add("hidden");
         tnElement.classList.remove("hidden");
     })
+
+    const button = document.querySelectorAll(".button");
+    const selectedLocation = document.querySelector(".AULNOIS-SS-LAON");
+    let displayedGrid = document.querySelector(`.${selectedLocation.classList[0]}-grid`);
+    console.log(`displayed grid is ${displayedGrid}`)
+
+    button.forEach(button => {
+        button.addEventListener("click", function() {
+            selectedLocation.classList.remove("selected");
+            button.classList.add("selected");
+            displayedGrid.classList.add("grid-hidden");
+            let newDisplayedGrid = document.querySelector(`.${button.classList[0]}-grid`);
+            newDisplayedGrid.classList.remove("grid-hidden");
+            displayedGrid = newDisplayedGrid;
+        })
+    })
 })
