@@ -81,6 +81,12 @@ async function getData(data) {
   return b.toFixed(3);
 }
 getData("AULNOIS-SS-LAON").then(data => console.log(`pente de régression linéaire à Aulnois-SS-Laon (depuis 1961): ${data}`));
+// getData("BELLE-ILE").then(data => console.log(`pente de régression linéaire à Belle-ile (depuis 1961): ${data}`));
+// getData("CAVILLARGUES").then(data => console.log(`pente de régression linéaire à Cavillargues (depuis 1961): ${data}`));
+// getData("PARIS-MTSOURIS").then(data => console.log(`pente de régression linéaire à Paris-Mtsouris (depuis 1961): ${data}`));
+// getData("VILLAR-ST-PANCRACE").then(data => console.log(`pente de régression linéaire à Vellar-St-Pancrace (depuis 1961): ${data}`));
+
+
 
 function displayLinearRegressionSlope(data, elementId) {
     getData(data).then(slope => {

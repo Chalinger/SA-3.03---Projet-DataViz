@@ -40,6 +40,11 @@ const jsonFiles = {
         return averageTemp.toFixed(2);
     }
     getData("AULNOIS-SS-LAON").then(data => console.log(`Température moyenne à Aulnois sous Laon (depuis 1961): ${data > 0 ? "+" : ""}${data}°C`));
+    // getData("BELLE-ILE").then(data => console.log(`Température moyenne à Belle-ile (depuis 1961): ${data > 0 ? "+" : ""}${data}°C`));
+    // getData("CAVILLARGUES").then(data => console.log(`Température moyenne à Cavillargues (depuis 1961): ${data > 0 ? "+" : ""}${data}°C`));
+    // getData("PARIS-MTSOURIS").then(data => console.log(`Température moyenne à Paris-Mtsouris (depuis 1961): ${data > 0 ? "+" : ""}${data}°C`));
+    // getData("VILLAR-ST-PANCRACE").then(data => console.log(`Température moyenne à Vellar-St-Pancrace (depuis 1961): ${data > 0 ? "+" : ""}${data}°C`));
+
 
     function displayAverageTemp(data, elementId) {
         document.getElementById(elementId).textContent = `${data > 0 ? "+" : ""}${data}°C`;

@@ -78,7 +78,13 @@ async function getData(data) {
     return `${hottestYear.year} ${hottestYear.averageTemp > 0 ? "+" : ""}${hottestYear.averageTemp.toFixed(2)}°C \n${coldestYear.year} ${coldestYear.averageTemp > 0 ? "+" : ""}${coldestYear.averageTemp.toFixed(2)}°C`;
 
 }
-getData("AULNOIS-SS-LAON").then(data => console.log(data));
+getData("AULNOIS-SS-LAON").then(data => console.log(`hottest and coldest year of Aulnois-SS-Laon (depuis 1961): ${data}`));
+// getData("BELLE-ILE").then(data => console.log(`hottest and coldest year of Belle-ile (depuis 1961): ${data}`));
+// getData("CAVILLARGUES").then(data => console.log(`hottest and coldest year of Cavillargues (depuis 1961): ${data}`));
+// getData("PARIS-MTSOURIS").then(data => console.log(`hottest and coldest year of Paris-Mtsouris (depuis 1961): ${data}`));
+// getData("VILLAR-ST-PANCRACE").then(data => console.log(`hottest and coldest year of Vellar-St-Pancrace (depuis 1961): ${data}`));
+
+
 
 function displayHottestYear(data, elementIdYear, elementIdTemp) {
     getData(data).then(hottestYear => {
