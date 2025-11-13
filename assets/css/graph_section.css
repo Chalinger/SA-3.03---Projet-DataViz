@@ -1,5 +1,3 @@
-
-
 #location-select {
     border: var(--graph-card-border-color) solid 3px;
     background-color: var(--graph-card-bg-color);
@@ -69,7 +67,13 @@
             background-color: var(--link-color);
         }
     }
+
+    &:hover {
+        background-color: var(--graph-card-bg-color-hover);
+        transform: scale(1.025);
+    }
 }
+
 
 .tx-tn-buttons {
     margin-left: 50px !important;
@@ -109,4 +113,18 @@
 
 .text-hidden {
     display: none;
+}
+
+@media (max-width: 1480px) {
+    #graph-container {
+        flex-direction: column;
+
+        #text {
+            width: 60%;
+        }
+    }
+
+    #cards {
+        justify-content: space-evenly;
+    }
 }

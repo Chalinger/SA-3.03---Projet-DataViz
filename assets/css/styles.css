@@ -14,6 +14,7 @@
 
     --graph-card-border-color: #FED6B4;
     --graph-card-bg-color: #FFF4EB;
+    --graph-card-bg-color-hover: #ffe9d7;
 
     --box-shadow: box-shadow: 0 0 35px 0 var(--secondary-text-color);
 }

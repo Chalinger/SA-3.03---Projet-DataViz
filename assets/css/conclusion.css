@@ -1,0 +1,13 @@
+#conclusion {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    margin: 0 auto 300px auto;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+}

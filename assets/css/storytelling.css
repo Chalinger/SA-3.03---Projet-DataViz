@@ -1,14 +1,24 @@
 #storytelling {
     margin: 200px 0;
+    z-index: 1;
 
     .storytelling-part {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        &.even img {
+            margin-left: 4vw;
+        }
 
         &.odd {
             margin-left: auto;
             flex-direction: row-reverse;
             margin: 75px 0;
+
+            img {
+                margin-right: 4vw;
+            }
         }
 
         .content-text {
@@ -39,9 +49,22 @@
         }
 
         img {
-            height: 300px;
+            height: 20vw;
+            max-height: 300px;
             border-radius: 25px;
             flex: end;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    #storytelling .storytelling-part .content-text {
+        h2 {
+            font-size: 3vw;
+        }
+
+        p, ul li {
+            font-size: 1.5vw;
         }
     }
 }
