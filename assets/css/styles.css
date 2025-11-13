@@ -127,3 +127,7 @@ a {
 a:hover {
     color: var(--link-color-hover);
 }
+
+main {
+    padding: 150px;
+}

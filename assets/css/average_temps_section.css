@@ -1,3 +1,9 @@
+#averagetemp {
+    border: blue solid 2px;
+    margin: 100px auto;
+    width: 80%;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -5,6 +11,7 @@
     align-items: center;
     gap: 10px;
 }
+
 .grid div {
     background: #3498db;
     color: white;
@@ -12,9 +19,58 @@
     padding: 10px;
     border-radius: 5px;
 }
+
 .text-grid {
     text-align: center;
 }
+
 .grid-hidden {
     display: none;
+}
+
+.buttons_averages {
+    margin: 0 auto;
+    height: 42px;
+    border-radius: 10px;
+    width: fit-content;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: var(--nav-bg-color);
+
+    button {
+        font-family: "Satoshi-Medium";
+        font-weight: light;
+        font-size: 16px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: var(--nav-bg-color);
+        color: var(--nav-secondary-text-color);
+
+        &.selected {
+            background-color: var(--nav-selected-button-bg-color);
+            color: white;
+        }
+    }
+}
+
+#infos {
+
+
+
+
+    .grid>*:nth-child(4n + 1),
+    .grid>*:nth-child(4n + 2) {
+        background: linear-gradient(90deg, #437ff5, #f55337);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .temp-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+    }
 }

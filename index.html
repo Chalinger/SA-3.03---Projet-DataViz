@@ -25,412 +25,438 @@
         </nav>
         <h1>L'Évolution du climat en <br> france sur toute une vie</h1>
     </header>
-    <section id="storytelling">
-        <div class="storytelling-part even">
-        <h2>Une vie comme unité de temps</h2>
-        <p>
-            En 1961, la France enregistrait en moyenne des hiver plus rigoureux, des étés plus doux. <br> 
-            63 ans plus tard, en 2024, une génération entière à grandi, travaillé, vieilli, pendant que le climat, lui aussi, changeait. <br>
-            Ce projet retrace l'évolution du climat français à l'échelle d'une vie humaine, pour comprendre concrètement ce que "le changement climatique" signifie quand on le vit année après année. 
-        </p>
-        </div>
-        <div class="storytelling-part odd">
-        <h2>Introduction du projet</h2>
-        <p>
-            À partir des données officielle de Météo France, nous avons observé l'évolution des température moyenne dans plusieurs régions françaises :  du nord au sud, des côtes au montagnes. <br>
-            Chaque graphique raconte une histoire différente; certaines zone se rechauffent plus que d'autres. <br>
-            Mais toutes montre une tendance commune : la France à changé de climat au fil d'une vie humaine.
-        </p>
-        </div>
-        <div class="storytelling-part even">
-        <h2>
-            Et si tu étais né en 1961?
-        </h2>
-        <p>
-            Si tu étais né en 1961, tu aurais connu:
-        </p>
-            <ul>
-                <li>Des hivers ou la neige tombait abondamment dans les régions montagneuse</li>
-                <li>Des été ou dépasser 30°C était exceptionnel.</li>
-                <li>Des printemps plus lents, plus frais.</li>
-            </ul>
-            <p>
-                En 2024, à 63 ans, tu vivrais dans une France plus chaude de 2 à 4°C en moyenne, avec des vagues de chaleur estivales devenues la norme. <br>
-                En une vie, ton pays s'est rechauffé aussi vite qu'il ne s'était jamais refroidi depuis des millénaires. 
-            </p>
-        </div>
-    </section>
-    <!-- NOM DES CLASSES SENSIBLES À LA CASSE! NE PAS STYLISER SUR LE NOM DES LOCATIONS! -->
-    <section id="graph1 aulnois-ss-laon">
-        <h2>Moyennes déceniales des températures maximales moyenne à <select name="location" id="location-select">
-            <option value="AULNOIS-SS-LAON">Aulnois sous Laon</option>
-            <option value="BELLE-ILE">Belle-Ile</option>
-            <option value="CAVILLARGUES">Cavillargues</option>
-            <option value="PARIS-MTSOURIS">Paris Mt Souris</option>
-            <option value="VILLAR-ST-PANCRACE">Villar St Pancrace</option>
-
-        </select></h2>
-        <div id="cards">
-            <div class="card" id="card_average-temp">
-                <h3>Température moyenne</h3>
-                <p id="average-temp"></p>
-            </div>
-            <div class="card" id="card_average-evolution">
-                <h3>Évolution moyenne</h3>
-                <p id="average-evolution">
+    <main>
+        <section id="storytelling">
+            <div class="storytelling-part even">
+                <h2>Une vie comme unité de temps</h2>
+                <p>
+                    En 1961, la France enregistrait en moyenne des hiver plus rigoureux, des étés plus doux. <br>
+                    63 ans plus tard, en 2024, une génération entière à grandi, travaillé, vieilli, pendant que le
+                    climat, lui aussi, changeait. <br>
+                    Ce projet retrace l'évolution du climat français à l'échelle d'une vie humaine, pour comprendre
+                    concrètement ce que "le changement climatique" signifie quand on le vit année après année.
                 </p>
             </div>
-            <div class="card" id="card_hottest-year">
-                <h3>Année la plus chaude</h3>
-                <p id="hottest-year"></p>
-                <p class="secondary-para" id="hottest-temp"></p>
+            <div class="storytelling-part odd">
+                <h2>Introduction du projet</h2>
+                <p>
+                    À partir des données officielle de Météo France, nous avons observé l'évolution des température
+                    moyenne dans plusieurs régions françaises : du nord au sud, des côtes au montagnes. <br>
+                    Chaque graphique raconte une histoire différente; certaines zone se rechauffent plus que d'autres.
+                    <br>
+                    Mais toutes montre une tendance commune : la France à changé de climat au fil d'une vie humaine.
+                </p>
             </div>
-            <div class="card" id="card_coldest-year">
-                <h3>Année la plus froide</h3>
-                <p id="coldest-year"></p>
-                <p class="secondary-para" id="coldest-temp"></p>
+            <div class="storytelling-part even">
+                <h2>
+                    Et si tu étais né en 1961?
+                </h2>
+                <p>
+                    Si tu étais né en 1961, tu aurais connu:
+                </p>
+                <ul>
+                    <li>Des hivers ou la neige tombait abondamment dans les régions montagneuse</li>
+                    <li>Des été ou dépasser 30°C était exceptionnel.</li>
+                    <li>Des printemps plus lents, plus frais.</li>
+                </ul>
+                <p>
+                    En 2024, à 63 ans, tu vivrais dans une France plus chaude de 2 à 4°C en moyenne, avec des vagues de
+                    chaleur estivales devenues la norme. <br>
+                    En une vie, ton pays s'est rechauffé aussi vite qu'il ne s'était jamais refroidi depuis des
+                    millénaires.
+                </p>
             </div>
-        </div>
-        <p class="info-para">L'évolution moyenne annuelle est calculée grâce à la régression linéaire.</p>
-        <div class="graphs aulnois-ss-laon">
-            <div class="tx-tn-buttons">
-                <button class="tx-button active">Températures maximales moyennes</button>
-                <button class="tn-button">Températures minimales moyennes</button>
-            </div>
-            <div id="graph-container">
-                <div id="graph_tx_aulnois_ss_laon" class="graph tx-graph aulnois-ss-laon june svg"></div>
-                <div id="graph_tn_aulnois_ss_laon" class="graph tn-graph aulnois-ss-laon june hidden svg"></div>
-                <div id="text" class="AULNOIS-SS-LAON-text">
-                    <h2 id="title_graph_storytelling">
-                        L’hiver qui s’efface du nord
-                    </h2>
-                    <p>
-                        Ici, le froid s’efface lentement. Depuis 1961, la température moyenne augmente d’environ +0,038°C par an. <br>
-                        L’année 1985, autrefois glaciale à 8,45°C, paraît bien lointaine face aux 12,47°C enregistrés en 2023. <br>
-                        Dans ce coin du nord, les hivers ont perdu leur mordant, les saisons se confondent, et les souvenirs de gel deviennent rares.
+        </section>
+        <!-- NOM DES CLASSES SENSIBLES À LA CASSE! NE PAS STYLISER SUR LE NOM DES LOCATIONS! -->
+        <section id="graph1 aulnois-ss-laon">
+            <h2>Moyennes déceniales des températures maximales moyenne à <select name="location" id="location-select">
+                    <option value="AULNOIS-SS-LAON">Aulnois sous Laon</option>
+                    <option value="BELLE-ILE">Belle-Ile</option>
+                    <option value="CAVILLARGUES">Cavillargues</option>
+                    <option value="PARIS-MTSOURIS">Paris Mt Souris</option>
+                    <option value="VILLAR-ST-PANCRACE">Villar St Pancrace</option>
+
+                </select></h2>
+            <div id="cards">
+                <div class="card" id="card_average-temp">
+                    <h3>Température moyenne</h3>
+                    <p id="average-temp"></p>
+                </div>
+                <div class="card" id="card_average-evolution">
+                    <h3>Évolution moyenne</h3>
+                    <p id="average-evolution">
                     </p>
                 </div>
-                <div id="text" class="BELLE-ILE-text text-hidden">
-                    <h2 id="title_graph_storytelling">
-                        L’océan qui ne rafraîchit plus
-                    </h2>
-                    <p>
-                        Même sur cette île battue par les vents, le thermomètre grimpe : +0,026°C par an. <br>2023 y atteint une moyenne annuelle de 14,4°C, un record étonnant pour la Bretagne. <br>L’océan amortit, mais ne protège plus vraiment : les hivers y sont devenus tièdes, et la mer n’a plus la fraîcheur d’autrefois. <br>Ici, le changement se ressent moins dans les extrêmes que dans la disparition du “froid”.
-                    </p>
+                <div class="card" id="card_hottest-year">
+                    <h3>Année la plus chaude</h3>
+                    <p id="hottest-year"></p>
+                    <p class="secondary-para" id="hottest-temp"></p>
                 </div>
-                <div id="text" class="CAVILLARGUES-text text-hidden">
-                    <h2 id="title_graph_storytelling">
-                        Le Sud en surchauffe
-                    </h2>
-                    <p>
-                        Sous le soleil du Gard, la tendance est nette : +0,039°C par an, la plus forte du panel. <br>En 1963, la moyenne annuelle était de 12,11°C ; en 2022, elle atteint 15,61°C. <br>Les étés s’étirent, les nuits chaudes se multiplient, et la chaleur s’impose comme une évidence. Ce n’est plus un été méridional : c’est un climat qui frôle celui du Maghreb.
-                    </p>
-                </div>
-                <div id="text" class="PARIS-MTSOURIS-text text-hidden">
-                    <h2 id="title_graph_storytelling">
-                        La ville ou la chaleur s’installe
-                    </h2>
-                    <p>
-                        Dans la capitale, la chaleur s’installe avec régularité : +0,03°C chaque année. <br>Entre 1963 (10,41°C) et 2022 (14,27°C), c’est presque 4°C de plus en soixante ans — un basculement silencieux. <br>Là où l’on parlait autrefois de “canicules exceptionnelles”, on parle aujourd’hui “d’épisodes récurrents”. <br>Paris n’est plus tout à fait tempérée : elle se réchauffe comme une grande ville du sud.
-                    </p>
-                </div>
-                <div id="text" class="VILLAR-ST-PANCRACE-text text-hidden">
-                    <h2 id="title_graph_storytelling">
-                        La montagne qui fond doucement
-                    </h2>
-                    <p>
-                        Même en altitude, la pente se redresse : +0,035°C chaque année. <br>La moyenne annuelle passe de 6,63°C en 1984 à 10,20°C en 2022. <br>Là où la neige recouvrait longtemps les vallées, elle se fait plus rare, plus éphémère. <br>En montagne aussi, le réchauffement se lit dans les chiffres, mais se ressent surtout dans le paysage
-                    </p>
+                <div class="card" id="card_coldest-year">
+                    <h3>Année la plus froide</h3>
+                    <p id="coldest-year"></p>
+                    <p class="secondary-para" id="coldest-temp"></p>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="averagetemp">
-        <div class="buttons_averages">
-            <button class="AULNOIS-SS-LAON selected button">Alnois Sous Laon</button>
-            <button class="BELLE-ILE button">Belle-Île</button>
-            <button class="CAVILLARGUES button">Cavillargues</button>
-            <button class="PARIS-MTSOURIS button">Paris Mtsouris</button>
-            <button class="VILLAR-ST-PANCRACE button">Villar St-Pancrace</button>
-        </div>
-        <div class="AULNOIS-SS-LAON-grid grid-container">
-        <div id="infos" class="grid">
-            <div class="grid-item time-info">
-                <img src="assets/img/bebe.svg" alt="">
-                <h3>1960s - Naissance</h3>
+            <p class="info-para">L'évolution moyenne annuelle est calculée grâce à la régression linéaire.</p>
+            <div class="graphs aulnois-ss-laon">
+                <div class="tx-tn-buttons">
+                    <button class="tx-button active">Températures maximales moyennes</button>
+                    <button class="tn-button">Températures minimales moyennes</button>
+                </div>
+                <div id="graph-container">
+                    <div id="graph_tx_aulnois_ss_laon" class="graph tx-graph aulnois-ss-laon june svg"></div>
+                    <div id="graph_tn_aulnois_ss_laon" class="graph tn-graph aulnois-ss-laon june hidden svg"></div>
+                    <div id="text" class="AULNOIS-SS-LAON-text">
+                        <h2 id="title_graph_storytelling">
+                            L’hiver qui s’efface du nord
+                        </h2>
+                        <p>
+                            Ici, le froid s’efface lentement. Depuis 1961, la température moyenne augmente d’environ
+                            +0,038°C par an. <br>
+                            L’année 1985, autrefois glaciale à 8,45°C, paraît bien lointaine face aux 12,47°C
+                            enregistrés en 2023. <br>
+                            Dans ce coin du nord, les hivers ont perdu leur mordant, les saisons se confondent, et les
+                            souvenirs de gel deviennent rares.
+                        </p>
+                    </div>
+                    <div id="text" class="BELLE-ILE-text text-hidden">
+                        <h2 id="title_graph_storytelling">
+                            L’océan qui ne rafraîchit plus
+                        </h2>
+                        <p>
+                            Même sur cette île battue par les vents, le thermomètre grimpe : +0,026°C par an. <br>2023 y
+                            atteint une moyenne annuelle de 14,4°C, un record étonnant pour la Bretagne. <br>L’océan
+                            amortit, mais ne protège plus vraiment : les hivers y sont devenus tièdes, et la mer n’a
+                            plus la fraîcheur d’autrefois. <br>Ici, le changement se ressent moins dans les extrêmes que
+                            dans la disparition du “froid”.
+                        </p>
+                    </div>
+                    <div id="text" class="CAVILLARGUES-text text-hidden">
+                        <h2 id="title_graph_storytelling">
+                            Le Sud en surchauffe
+                        </h2>
+                        <p>
+                            Sous le soleil du Gard, la tendance est nette : +0,039°C par an, la plus forte du panel.
+                            <br>En 1963, la moyenne annuelle était de 12,11°C ; en 2022, elle atteint 15,61°C. <br>Les
+                            étés s’étirent, les nuits chaudes se multiplient, et la chaleur s’impose comme une évidence.
+                            Ce n’est plus un été méridional : c’est un climat qui frôle celui du Maghreb.
+                        </p>
+                    </div>
+                    <div id="text" class="PARIS-MTSOURIS-text text-hidden">
+                        <h2 id="title_graph_storytelling">
+                            La ville ou la chaleur s’installe
+                        </h2>
+                        <p>
+                            Dans la capitale, la chaleur s’installe avec régularité : +0,03°C chaque année. <br>Entre
+                            1963 (10,41°C) et 2022 (14,27°C), c’est presque 4°C de plus en soixante ans — un basculement
+                            silencieux. <br>Là où l’on parlait autrefois de “canicules exceptionnelles”, on parle
+                            aujourd’hui “d’épisodes récurrents”. <br>Paris n’est plus tout à fait tempérée : elle se
+                            réchauffe comme une grande ville du sud.
+                        </p>
+                    </div>
+                    <div id="text" class="VILLAR-ST-PANCRACE-text text-hidden">
+                        <h2 id="title_graph_storytelling">
+                            La montagne qui fond doucement
+                        </h2>
+                        <p>
+                            Même en altitude, la pente se redresse : +0,035°C chaque année. <br>La moyenne annuelle
+                            passe de 6,63°C en 1984 à 10,20°C en 2022. <br>Là où la neige recouvrait longtemps les
+                            vallées, elle se fait plus rare, plus éphémère. <br>En montagne aussi, le réchauffement se
+                            lit dans les chiffres, mais se ressent surtout dans le paysage
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="grid-item temp-info">
-                <!-- <h1>9.8°C</h1> -->
+        </section>
+        <section id="averagetemp">
+            <nav class="buttons_averages">
+                <button class="AULNOIS-SS-LAON selected button">Alnois Sous Laon</button>
+                <button class="BELLE-ILE button">Belle-Île</button>
+                <button class="CAVILLARGUES button">Cavillargues</button>
+                <button class="PARIS-MTSOURIS button">Paris Mtsouris</button>
+                <button class="VILLAR-ST-PANCRACE button">Villar St-Pancrace</button>
+            </nav>
+            <div class="AULNOIS-SS-LAON-grid grid-container">
+                <div id="infos" class="grid">
+                    <div class="grid-item time-info">
+                        <img src="assets/img/bebe.svg" alt="">
+                        <h3>1960s - Naissance</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <!-- <h1>9.8°C</h1> -->
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            Les hivers mordaient encore, <br>
+                            la neige tenait parfois des semaines.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/book.svg" alt="">
+                        <h3>1980s - Études</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <!-- <h1>10.1°C</h1> -->
+                    </div>
+                    <div>
+                        <p>
+                            les saisons s’équilibrent, <br>
+                            les printemps se font plus doux.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/work-bag.svg" alt="">
+                        <h3>2000s - Travail</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <!-- <h1>19.9°C</h1> -->
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            Le froid devient rare, <br>
+                            les canicules s’invitent parfois dans le nord.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/old.svg" alt="">
+                        <h3>2020s - Retraite</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <!-- <h1>11.8°C</h1> -->
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            les saisons se fondent les unes dans <br>
+                            les autres, les gelées sont un souvenir.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-grid">En une vie, le nord à gagné 2°C</p>
             </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                    Les hivers mordaient encore, <br>
-                    la neige tenait parfois des semaines.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/book.svg" alt="">
-                <h3>1980s - Études</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <!-- <h1>10.1°C</h1> -->
-            </div>
-            <div>
-                <p>
-                    les saisons s’équilibrent, <br>
-                    les printemps se font plus doux.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/work-bag.svg" alt="">
-                <h3>2000s - Travail</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <!-- <h1>19.9°C</h1> -->
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                    Le froid devient rare, <br>
-                    les canicules s’invitent parfois dans le nord.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/old.svg" alt="">
-                <h3>2020s - Retraite</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <!-- <h1>11.8°C</h1> -->
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                    les saisons se fondent les unes dans <br>
-                    les autres, les gelées sont un souvenir.
-                </p>
-            </div>
-        </div>
-        <p class="text-grid">En une vie, le nord à gagné 2°C</p>
-        </div>
 
 
-         <div class="BELLE-ILE-grid grid-container grid-hidden">
-        <div id="infos" class="grid">
-            <div class="grid-item time-info">
-                <img src="assets/img/bebe.svg" alt="">
-                <h3>1960s - Naissance</h3>
+            <div class="BELLE-ILE-grid grid-container grid-hidden">
+                <div id="infos" class="grid">
+                    <div class="grid-item time-info">
+                        <img src="assets/img/bebe.svg" alt="">
+                        <h3>1960s - Naissance</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>11.9°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            Les vents de l’Atlantique gardaient <br>
+                            l’air vif et salé.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/book.svg" alt="">
+                        <h3>1980s - Études</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>12.3°C</h1>
+                    </div>
+                    <div>
+                        <p>
+                            L’île reste fraîche,<br>
+                            les étés doux.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/work-bag.svg" alt="">
+                        <h3>2000s - Travail</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>12.8°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            l’océan tempère,<br> mais le froid recule.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/old.svg" alt="">
+                        <h3>2020s - Retraite</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>13.4°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            L’hiver s’est adouci, <br>presque effacé.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-grid">Même ici, le souffle marin ne suffit plus à freiner la hausse.</p>
             </div>
-            <div class="grid-item temp-info">
-                <h1>11.9°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                    Les vents de l’Atlantique gardaient <br>
-                    l’air vif et salé.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/book.svg" alt="">
-                <h3>1980s - Études</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>12.3°C</h1>
-            </div>
-            <div>
-                <p>
-                    L’île reste fraîche,<br> 
-                    les étés doux.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/work-bag.svg" alt="">
-                <h3>2000s - Travail</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>12.8°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                    l’océan tempère,<br> mais le froid recule.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/old.svg" alt="">
-                <h3>2020s - Retraite</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>13.4°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                    L’hiver s’est adouci, <br>presque effacé.
-                </p>
-            </div>
-        </div>
-        <p class="text-grid">Même ici, le souffle marin ne suffit plus à freiner la hausse.</p>
-        </div>
 
-        <div class="CAVILLARGUES-grid grid-container grid-hidden">
-        <div id="infos" class="grid">
-            <div class="grid-item time-info">
-                <img src="assets/img/bebe.svg" alt="">
-                <h3>1960s - Naissance</h3>
+            <div class="CAVILLARGUES-grid grid-container grid-hidden">
+                <div id="infos" class="grid">
+                    <div class="grid-item time-info">
+                        <img src="assets/img/bebe.svg" alt="">
+                        <h3>1960s - Naissance</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>12.7°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            la chaleur fait partie du décor,<br>mais reste vivable.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/book.svg" alt="">
+                        <h3>1980s - Études</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>13.1°C</h1>
+                    </div>
+                    <div>
+                        <p>
+                            les étés s’étirent, <br>la sécheresse s’installe.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/work-bag.svg" alt="">
+                        <h3>2000s - Travail</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>13.9°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            les journées au-dessus <br>de 35 °C se multiplient.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/old.svg" alt="">
+                        <h3>2020s - Retraite</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>14.9°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            la terre craquelle, <br>la nuit ne rafraîchit plus.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-grid">Ici, le sud a changé de visage, un été presque permanent.</p>
             </div>
-            <div class="grid-item temp-info">
-                <h1>12.7°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                    la chaleur fait partie du décor,<br>mais reste vivable.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/book.svg" alt="">
-                <h3>1980s - Études</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>13.1°C</h1>
-            </div>
-            <div>
-                <p>
-                    les étés s’étirent, <br>la sécheresse s’installe.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/work-bag.svg" alt="">
-                <h3>2000s - Travail</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>13.9°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                    les journées au-dessus <br>de 35 °C se multiplient.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/old.svg" alt="">
-                <h3>2020s - Retraite</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>14.9°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                   la terre craquelle, <br>la nuit ne rafraîchit plus.
-                </p>
-            </div>
-        </div>
-        <p class="text-grid">Ici, le sud a changé de visage, un été presque permanent.</p>
-        </div>
 
 
-        <div class="PARIS-MTSOURIS-grid grid-container grid-hidden">
-        <div id="infos" class="grid">
-            <div class="grid-item time-info">
-                <img src="assets/img/bebe.svg" alt="">
-                <h3>1960s - Naissance</h3>
+            <div class="PARIS-MTSOURIS-grid grid-container grid-hidden">
+                <div id="infos" class="grid">
+                    <div class="grid-item time-info">
+                        <img src="assets/img/bebe.svg" alt="">
+                        <h3>1960s - Naissance</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>11.6°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            ne capitale tempérée, <br>les canicules sont un événement.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/book.svg" alt="">
+                        <h3>1980s - Études</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>12.1°C</h1>
+                    </div>
+                    <div>
+                        <p>
+                            Les étés se font plus lourds, mais restent supportables.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/work-bag.svg" alt="">
+                        <h3>2000s - Travail</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>12.8°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            Les nuits trop chaudes deviennent <br>un sujet de société.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/old.svg" alt="">
+                        <h3>2020s - Retraite</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>13.4°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            La chaleur est désormais la norme.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-grid">En une vie, Paris a franchi un seuil symbolique : le climat du sud s’invite au
+                    nord.</p>
             </div>
-            <div class="grid-item temp-info">
-                <h1>11.6°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                   ne capitale tempérée, <br>les canicules sont un événement.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/book.svg" alt="">
-                <h3>1980s - Études</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>12.1°C</h1>
-            </div>
-            <div>
-                <p>
-                    Les étés se font plus lourds, mais restent supportables.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/work-bag.svg" alt="">
-                <h3>2000s - Travail</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>12.8°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                    Les nuits trop chaudes deviennent <br>un sujet de société.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/old.svg" alt="">
-                <h3>2020s - Retraite</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>13.4°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                   La chaleur est désormais la norme.
-                </p>
-            </div>
-        </div>
-        <p class="text-grid">En une vie, Paris a franchi un seuil symbolique : le climat du sud s’invite au nord.</p>
-        </div>
 
-        <div class="VILLAR-ST-PANCRACE-grid grid-container grid-hidden">
-        <div id="infos" class="grid">
-            <div class="grid-item time-info">
-                <img src="assets/img/bebe.svg" alt="">
-                <h3>1960s - Naissance</h3>
+            <div class="VILLAR-ST-PANCRACE-grid grid-container grid-hidden">
+                <div id="infos" class="grid">
+                    <div class="grid-item time-info">
+                        <img src="assets/img/bebe.svg" alt="">
+                        <h3>1960s - Naissance</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>7.5°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            La neige rythmait les saisons, <br>les hivers étaient longs.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/book.svg" alt="">
+                        <h3>1980s - Études</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>7.6°C</h1>
+                    </div>
+                    <div>
+                        <p>
+                            Les fontes printanières arrivent <br>plus tôt.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/work-bag.svg" alt="">
+                        <h3>2000s - Travail</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>8.5°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            Les glaciers reculent, <br>la neige se raréfie.
+                        </p>
+                    </div>
+                    <div class="grid-item time-info">
+                        <img src="assets/img/old.svg" alt="">
+                        <h3>2020s - Retraite</h3>
+                    </div>
+                    <div class="grid-item temp-info">
+                        <h1>9.5°C</h1>
+                    </div>
+                    <div class="grid-item storytelling-info">
+                        <p>
+                            L’air reste frais, mais plus tout à fait alpin.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-grid">Même les sommets n’échappent plus au réchauffement.</p>
             </div>
-            <div class="grid-item temp-info">
-                <h1>7.5°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                   La neige rythmait les saisons, <br>les hivers étaient longs.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/book.svg" alt="">
-                <h3>1980s - Études</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>7.6°C</h1>
-            </div>
-            <div>
-                <p>
-                    Les fontes printanières arrivent <br>plus tôt.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/work-bag.svg" alt="">
-                <h3>2000s - Travail</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>8.5°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                    Les glaciers reculent, <br>la neige se raréfie.
-                </p>
-            </div>
-            <div class="grid-item time-info">
-                <img src="assets/img/old.svg" alt="">
-                <h3>2020s - Retraite</h3>
-            </div>
-            <div class="grid-item temp-info">
-                <h1>9.5°C</h1>
-            </div>
-            <div class="grid-item storytelling-info">
-                <p>
-                   L’air reste frais, mais plus tout à fait alpin.
-                </p>
-            </div>
-        </div>
-        <p class="text-grid">Même les sommets n’échappent plus au réchauffement.</p>
-        </div>
-    </section>
+        </section>
+    </main>
     <!-- <script type="module" src="assets/js/graphs/byMonth/tx_monthly.js"></script> -->
     <script type="module" src="assets/js/graphs/byMonth/tx_monthly.js"></script>
     <script type="module" src="assets/js/graphs/byMonth/tn_monthly.js"></script>
