@@ -1,9 +1,10 @@
-header{
+header {
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
-nav:not(.buttons_avaerage) {
+
+nav:not(.buttons_averages) {
     padding: 0;
     margin: 0;
     display: flex;
@@ -12,18 +13,40 @@ nav:not(.buttons_avaerage) {
     align-items: center;
     padding: 0 20px;
 }
+
 nav ul {
     display: flex;
     list-style: none;
     gap: 5px;
     margin-left: auto;
 }
+
 header h1 {
-    font-size: 2rem;
-    display: flex;
+    font-size: 4rem;
+    margin: auto;
     text-align: center;
-    align-items: center;
+    width: 75%;
+    transform: translateY(-6vh);
+}
+
+.scroll-indicator {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    flex-direction: column;
     justify-content: center;
-    flex: 1;
-    transform: translateY(-10vh);
+    align-items: center;
+    animation: flotter 2s ease-in-out infinite;
+}
+
+@keyframes flotter {
+
+    0%,
+    100% {
+        transform: translateY(-5vh);
+    }
+
+    50% {
+        transform: translateY(-7vh);
+    }
 }

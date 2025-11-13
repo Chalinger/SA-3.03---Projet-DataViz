@@ -1,25 +1,47 @@
 #storytelling {
-    padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-#storytelling {
-    margin-bottom: 40px;
-}
-.storytelling-part {
-    width: 70%;
-    margin-bottom: 100px;
-}
-.odd {
-    margin-left: auto;
-}
-#storytelling ul li {
-    list-style: disc;
-    margin-left: 40px;
-}
-#storytelling ul{
-    margin: 10px 0 10px 0;
-}
-h2{
-    margin: 0;
+    margin: 200px 0;
+
+    .storytelling-part {
+        display: flex;
+        justify-content: space-between;
+
+        &.odd {
+            margin-left: auto;
+            flex-direction: row-reverse;
+            margin: 75px 0;
+        }
+
+        .content-text {
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h2 {
+                margin-bottom: 30px;
+                margin-left: 0;
+                font-size: 2.35rem;
+            }
+
+            p {
+                font-family: Satoshi-Light;
+            }
+
+            ul {
+                margin: 10px 0;
+
+                li {
+                    font-family: Satoshi-Light;
+                    list-style: disc;
+                    margin-left: 40px;
+                }
+            }
+        }
+
+        img {
+            height: 300px;
+            border-radius: 25px;
+            flex: end;
+        }
+    }
 }
