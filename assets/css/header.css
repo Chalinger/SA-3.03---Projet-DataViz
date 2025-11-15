@@ -29,6 +29,15 @@ header h1 {
     transform: translateY(-6vh);
 }
 
+nav h3 a {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+        color: black;
+    }
+}
+
 .scroll-indicator {
     display: flex;
     text-decoration: none;

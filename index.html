@@ -12,16 +12,17 @@
     <link rel="stylesheet" href="assets/css/average_temps_section.css">
     <link rel="stylesheet" href="assets/css/data-interpretation.css">
     <link rel="stylesheet" href="assets/css/conclusion.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <title>ClimEvo</title>
 </head>
 
 <body>
     <header>
         <nav>
-            <h3>ClimEvo</h3>
+            <h3><a href="index.html">ClimEvo</a></h3>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#storytelling">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
@@ -41,11 +42,9 @@
                 <div class="content-text">
                     <h2>Une vie comme unité de temps</h2>
                     <p>
-                        En 1961, la France enregistrait en moyenne des hiver plus rigoureux, des étés plus doux. <br>
-                        63 ans plus tard, en 2024, une génération entière à grandi, travaillé, vieilli, pendant que le
-                        climat, lui aussi, changeait. <br>
-                        Ce projet retrace l'évolution du climat français à l'échelle d'une vie humaine, pour comprendre
-                        concrètement ce que "le changement climatique" signifie quand on le vit année après année.
+                        En 1961, la France enregistrait en moyenne des hivers plus rigoureux et des étés plus doux. <br>
+                        Soixante-trois ans plus tard, en 2024, une génération entière a grandi, travaillé et vieilli pendant que le climat, lui aussi, changeait. <br>
+                        Ce projet retrace l'évolution du climat français à l'échelle d'une vie humaine pour comprendre concrètement ce que le « changement climatique » signifie lorsqu'on le vit année après année.
                     </p>
                 </div>
                 <img src="assets/img/storytelling-img-1.png" id="storytelling-img-1" alt="image-1">
@@ -54,12 +53,11 @@
                 <div class="content-text">
                     <h2>Introduction du projet</h2>
                     <p>
-                        À partir des données officielle de Météo France, nous avons observé l'évolution des température
-                        moyenne dans plusieurs régions françaises : du nord au sud, des côtes au montagnes. <br>
-                        Chaque graphique raconte une histoire différente; certaines zone se rechauffent plus que
-                        d'autres.
+                        À partir des données officielles de Météo-France, nous avons observé l'évolution des températures
+                        moyennes dans plusieurs régions françaises : du nord au sud, des côtes aux montagnes. <br>
+                        Chaque graphique raconte une histoire différente ; certaines zones se réchauffent plus que d'autres.
                         <br>
-                        Mais toutes montre une tendance commune : la France à changé de climat au fil d'une vie humaine.
+                        Mais toutes montrent une tendance commune : la France a changé de climat au fil d'une vie humaine.
                     </p>
                 </div>
                 <img src="assets/img/storytelling-img-2.png" id="storytelling-img-2" alt="image-2">
@@ -68,21 +66,20 @@
             <div class="storytelling-part even">
                 <div class="content-text">
                     <h2>
-                        Et si tu étais né en 1961?
+                        Et si tu étais né en 1961 ?
                     </h2>
                     <p>
-                        Si tu étais né en 1961, tu aurais connu:
+                        Si tu étais né en 1961, tu aurais connu :
                     </p>
                     <ul>
-                        <li>Des hivers ou la neige tombait abondamment dans les régions montagneuse</li>
-                        <li>Des été ou dépasser 30°C était exceptionnel.</li>
+                        <li>Des hivers où la neige tombait abondamment dans les régions montagneuses.</li>
+                        <li>Des étés où dépasser 30°C était exceptionnel.</li>
                         <li>Des printemps plus lents, plus frais.</li>
                     </ul>
                     <p>
                         En 2024, à 63 ans, tu vivrais dans une France plus chaude de 2 à 4°C en moyenne, avec des vagues
-                        de
-                        chaleur estivales devenues la norme. <br>
-                        En une vie, ton pays s'est rechauffé aussi vite qu'il ne s'était jamais refroidi depuis des
+                        de chaleur estivales devenues la norme. <br>
+                        En une vie, ton pays s'est réchauffé aussi vite qu'il ne s'était jamais refroidi depuis des
                         millénaires.
                     </p>
                 </div>
@@ -160,8 +157,8 @@
             <p class="info-para">L'évolution moyenne annuelle est calculée grâce à la régression linéaire.</p>
             <div class="graphs aulnois-ss-laon">
                 <div class="tx-tn-buttons">
-                    <button class="tx-button active">Moyennes maximales</button>
-                    <button class="tn-button">Moyennes minimales</button>
+                    <button class="tx-button selected button">Moyennes maximales</button>
+                    <button class="tn-button button">Moyennes minimales</button>
                 </div>
                 <div id="graph-container">
                     <div id="graph_tx_aulnois_ss_laon" class="graph tx-graph aulnois-ss-laon june svg"></div>
@@ -516,17 +513,10 @@
         </section>
 
         <section id="data-interpretation">
-            <p id="interpretation-1">Les chiffres ne mentent pas :
-                la tendance est nette, mesurable, incontestable.
-                Selon la région, les températures ont augmenté de +1,5°C à +2,5°C depuis les années 1960. <br>
-                <b>Ce n’est pas un scénario futur, c’est une réalité déjà vécue.</b>
-            </p>
+            <p id="interpretation-1">Les chiffres ne mentent pas : la tendance est nette, mesurable, incontestable. Selon la région, les températures ont augmenté de +1,5°C à +2,5°C depuis les années 1960. <br> <b>Ce n’est pas un scénario futur, c’est une réalité déjà vécue.</b></p>
             <img src="assets/img/data-interpretation-img.png" class="left-side" alt="left-side">
             <img src="assets/img/data-interpretation-img.png" class="right-side" alt="right-side">
-            <p id="interpretation-2">Nous ne cherchons pas à alarmer, mais à rendre tangible ce que signifient les
-                moyennes:
-                derrière ces chiffres, il y a des étés plus longs, des récoltes décalées, des écosystèmes bousculés.
-            </p>
+            <p id="interpretation-2">Nous ne cherchons pas à alarmer, mais à rendre tangible ce que signifient les moyennes : derrière ces chiffres, il y a des étés plus longs, des récoltes décalées, des écosystèmes bousculés.</p>
         </section>
         <section id="conclusion">
             <h2>La France d’une vie à l’autre.</h2>
@@ -541,7 +531,8 @@
     </main>
 
     <footer>
-
+        <p>©Rapahaël C, Victorl L-C, Romain V - Tous droits reservés</p>
+        <a href="mentions.html">Mentions légales</a>
     </footer>
 
     <!-- <script type="module" src="assets/js/graphs/byMonth/tx_monthly.js"></script> -->

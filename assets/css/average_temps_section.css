@@ -47,7 +47,7 @@
         background-color: var(--nav-bg-color);
         color: var(--nav-secondary-text-color);
 
-        &.selected, &.active {
+        &.selected {
             background-color: var(--nav-selected-button-bg-color);
             color: white;
         }
