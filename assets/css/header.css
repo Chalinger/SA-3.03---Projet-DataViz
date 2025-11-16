@@ -48,6 +48,10 @@ nav h3 a {
     animation: flotter 2s ease-in-out infinite;
 }
 
+li a:hover {
+    text-decoration: underline;
+}
+
 @keyframes flotter {
 
     0%,

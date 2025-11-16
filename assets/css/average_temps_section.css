@@ -26,7 +26,8 @@
     display: none;
 }
 
-.buttons_averages, .tx-tn-buttons {
+.buttons_averages,
+.tx-tn-buttons {
 
     margin: 0 auto;
     height: 42px;
@@ -99,4 +100,19 @@
     >*:nth-child(11) {
         color: #F4442E;
     }
+}
+
+.buttons_averages button,
+.tx-tn-buttons button {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.buttons_averages button.selected,
+.tx-tn-buttons button.selected {
+    transform: scale(1.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }

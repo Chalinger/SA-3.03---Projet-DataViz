@@ -17,6 +17,17 @@ section {
         margin-bottom: 20px;
     }
 
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        font-family: 'Satoshi-BoldItalic';
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
     p {
         font-size: 1rem;
         line-height: 1.5;
@@ -31,4 +42,12 @@ main {
     a:hover {
         text-decoration: underline;
     }
+}
+
+article {
+    margin-bottom: 30px;
+}
+
+li {
+    margin-bottom: 10px;
 }

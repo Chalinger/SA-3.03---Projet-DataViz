@@ -1,35 +1,48 @@
-document.addEventListener("DOMContentLoaded", function() { 
-    const tnButton = document.querySelector(".tn-button");
-    const txButton = document.querySelector(".tx-button");
-    const txElement = document.querySelector(".tx-graph");
-    const tnElement = document.querySelector(".tn-graph");
+document.addEventListener("DOMContentLoaded", () => {
+  // Boutons pour basculer entre les graphiques TX et TN
+  const tnButton = document.querySelector(".tn-button");
+  const txButton = document.querySelector(".tx-button");
+  const txElement = document.querySelector(".tx-graph");
+  const tnElement = document.querySelector(".tn-graph");
 
-    txButton.addEventListener("click", function() {
-        txElement.classList.remove("hidden");
-        tnElement.classList.add("hidden");
+  if (txButton && tnButton && txElement && tnElement) {
+    txButton.addEventListener("click", () => {
+      txElement.classList.remove("hidden");
+      tnElement.classList.add("hidden");
+      txButton.classList.add("selected");
+      tnButton.classList.remove("selected");
     });
-    tnButton.addEventListener("click", function() {
-        txElement.classList.add("hidden");
-        tnElement.classList.remove("hidden");
+
+    tnButton.addEventListener("click", () => {
+      tnElement.classList.remove("hidden");
+      txElement.classList.add("hidden");
+      tnButton.classList.add("selected");
+      txButton.classList.remove("selected");
     });
+  }
 
-    const buttons = document.querySelectorAll(".button");
-    const selectedLocation = document.querySelector(".AULNOIS-SS-LAON");
-    let displayedGrid = document.querySelector(`.${selectedLocation.classList[0]}-grid`);
+  // Boutons de localisation des graphiques des moyennes
+  const locationButtons = document.querySelectorAll("nav.buttons_averages .button");
+  let currentGrid = document.querySelector(".AULNOIS-SS-LAON-grid");
 
-    buttons.forEach(button => {
-        button.addEventListener("click", function() {
-            // Remove 'selected' class from all buttons
-            buttons.forEach(btn => btn.classList.remove("selected"));
-            
-            // Add 'selected' class to the clicked button
-            button.classList.add("selected");
+  if (locationButtons.length > 0 && currentGrid) {
+    locationButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        locationButtons.forEach(btn => btn.classList.remove("selected"));
+        button.classList.add("selected");
 
-            // Hide the previously displayed grid
-            displayedGrid.classList.add("grid-hidden");
-            let newDisplayedGrid = document.querySelector(`.${button.classList[0]}-grid`);
-            newDisplayedGrid.classList.remove("grid-hidden");
-            displayedGrid = newDisplayedGrid;
-        });
-    });s
+        
+        currentGrid.classList.add("grid-hidden");
+
+        
+        const className = button.classList[0];
+        const newGrid = document.querySelector(`.${className}-grid`);
+
+        if (newGrid) {
+          newGrid.classList.remove("grid-hidden");
+          currentGrid = newGrid;
+        }
+      });
+    });
+  }
 });
