@@ -1,3 +1,8 @@
+#averagetemp {
+    margin: 100px auto;
+    width: 80%;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -5,16 +10,109 @@
     align-items: center;
     gap: 10px;
 }
+
 .grid div {
-    background: #3498db;
-    color: white;
+    color: black;
     font-weight: bold;
     padding: 10px;
     border-radius: 5px;
 }
+
 .text-grid {
     text-align: center;
 }
+
 .grid-hidden {
     display: none;
+}
+
+.buttons_averages,
+.tx-tn-buttons {
+
+    margin: 0 auto;
+    height: 42px;
+    border-radius: 10px;
+    width: fit-content;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: var(--nav-bg-color);
+
+    button {
+        font-family: "Satoshi-Medium";
+        font-weight: light;
+        font-size: 16px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: var(--nav-bg-color);
+        color: var(--nav-secondary-text-color);
+
+        &.selected {
+            background-color: var(--nav-selected-button-bg-color);
+            color: white;
+        }
+    }
+}
+
+#infos {
+    .time-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .temp-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    .storytelling-info {
+        padding-left: 10px;
+        font-family: Satoshi-Light;
+        font-size: 16px;
+    }
+
+    >*:nth-child(1),
+    >*:nth-child(2) {
+        background: linear-gradient(148deg, #4AC1F3 14.92%, #2767ED 84.88%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    >*:nth-child(4),
+    >*:nth-child(5) {
+        color: #2767ED;
+    }
+
+    >*:nth-child(7),
+    >*:nth-child(8) {
+        background: linear-gradient(175deg, #2767ED 1.82%, #F4442E 96.63%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    >*:nth-child(10),
+    >*:nth-child(11) {
+        color: #F4442E;
+    }
+}
+
+.buttons_averages button,
+.tx-tn-buttons button {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.buttons_averages button.selected,
+.tx-tn-buttons button.selected {
+    transform: scale(1.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }

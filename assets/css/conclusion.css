@@ -1,0 +1,14 @@
+#conclusion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+}

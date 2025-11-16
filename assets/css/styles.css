@@ -8,12 +8,25 @@
     --accent-color: #fc9e4f;
     --accent-color-opacity: rgba(252, 158, 79, 0.5);
 
+    --nav-secondary-text-color: #6F6AFB;
+    --nav-selected-button-bg-color: #F4442E;
+    --nav-bg-color: #E8E8FC;
+
+    --graph-card-border-color: #FED6B4;
+    --graph-card-bg-color: #FFF4EB;
+    --graph-card-bg-color-hover: #ffe9d7;
+
     --box-shadow: box-shadow: 0 0 35px 0 var(--secondary-text-color);
 }
-*{
+
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* declare fonts */
@@ -24,72 +37,82 @@
     font-weight: 100 900;
     font-style: normal;
 }
+
 /* REGULAR FONTS */
-@font-face{
+@font-face {
     font-family: "Satoshi-Black";
     src: url('../fonts/Satoshi-Black.woff') format('woff'),
         url('../fonts/Satoshi-Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
 }
-@font-face{
+
+@font-face {
     font-family: "Satoshi-Bold";
     src: url('../fonts/Satoshi-Bold.woff') format('woff'),
         url('../fonts/Satoshi-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
 }
-@font-face{
+
+@font-face {
     font-family: "Satoshi-Medium";
     src: url('../fonts/Satoshi-Medium.woff') format('woff'),
         url('../fonts/Satoshi-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
 }
-@font-face{
+
+@font-face {
     font-family: "Satoshi-Regular";
     src: url('../fonts/Satoshi-Regular.woff') format('woff'),
         url('../fonts/Satoshi-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
-@font-face{
+
+@font-face {
     font-family: "Satoshi-Light";
     src: url('../fonts/Satoshi-Light.woff') format('woff'),
         url('../fonts/Satoshi-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
 }
+
 /* ITALICS */
-@font-face{
+@font-face {
     font-family: "Satoshi-BlackItalic";
     src: url('../fonts/Satoshi-BlackItalic.woff') format('woff'),
         url('../fonts/Satoshi-BlackItalic.woff2') format('woff2');
     font-weight: 900;
     font-style: italic;
 }
-@font-face{
+
+@font-face {
     font-family: "Satoshi-BoldItalic";
     src: url('../fonts/Satoshi-BoldItalic.woff') format('woff'),
         url('../fonts/Satoshi-BoldItalic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
 }
-@font-face{
+
+@font-face {
     font-family: "Satoshi-MediumItalic";
     src: url('../fonts/Satoshi-MediumItalic.woff') format('woff'),
         url('../fonts/Satoshi-MediumItalic.woff2') format('woff2');
     font-weight: 500;
     font-style: italic;
 }
-@font-face{
+
+@font-face {
     font-family: "Satoshi-Italic";
     src: url('../fonts/Satoshi-Italic.woff') format('woff'),
         url('../fonts/Satoshi-Italic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
 }
-@font-face{
+
+@font-face {
     font-family: "Satoshi-LightItalic";
     src: url('../fonts/Satoshi-LightItalic.woff') format('woff'),
         url('../fonts/Satoshi-LightItalic.woff2') format('woff2');
@@ -101,29 +124,44 @@ html {
     background-color: var(--bg-color);
     color: var(--text-color);
 }
+
 h1 {
     font-family: "Paris2024-Variable";
     font-weight: 800;
     font-style: normal;
 }
+
 h2 {
     font-family: "Paris2024-Variable";
     font-weight: 700;
     font-style: normal;
     margin-left: 20px;
 }
+
 h3 {
     font-family: "Satoshi-Medium";
     font-style: normal;
 }
-p, a, li, ul {
+
+p,
+a,
+li,
+ul {
     font-family: "Satoshi-Regular";
     font-style: normal;
 }
+
 a {
     text-decoration: none;
     color: var(--link-color);
 }
+
 a:hover {
     color: var(--link-color-hover);
+}
+
+main {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
 }

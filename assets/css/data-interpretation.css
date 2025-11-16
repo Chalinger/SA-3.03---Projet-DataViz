@@ -1,0 +1,35 @@
+#data-interpretation {
+
+    img.right-side {
+        position: relative;
+        clip-path: inset(0 50% 0 0);
+        transform: translateY(-175px);
+    }
+
+    img {
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        height: 35vw;
+        max-height: 400px;
+    }
+
+    img.left-side {
+        position: relative;
+        clip-path: inset(0 0 0 50%);
+    }
+
+    p {
+        width: 48%;
+        /* border: red solid 2px; */
+    }
+
+    #interpretation-1 {
+        transform: translateY(150px);
+    }
+
+    #interpretation-2 {
+        margin-left: auto;
+        transform: translateY(-325px);
+    }
+}

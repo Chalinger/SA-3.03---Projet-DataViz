@@ -1,0 +1,53 @@
+header {
+    height: 500px;
+    display: block;
+
+    h1 {
+        font-size: 3rem;
+        margin: 20vh auto;
+        text-align: center;
+    }
+}
+
+section {
+    margin-bottom: 40px;
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        font-family: 'Satoshi-BoldItalic';
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 20px;
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+article {
+    margin-bottom: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
