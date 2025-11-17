@@ -109,9 +109,9 @@ function updateGrid(station, decades) {
 
     const temps = indices
         .map(i => decades[i]?.averageTemp)
-        .filter(t => Number.isFinite(t)); // au lieu de .filter(Boolean)
+        .filter(t => Number.isFinite(t));
 
-    const tempInfos = Array.from(grid.querySelectorAll(".temp-info")); // au lieu de ".temp-infos"
+    const tempInfos = Array.from(grid.querySelectorAll(".temp-info"));
     temps.forEach((temp, i) => {
         const cell = tempInfos[i];
         if (!cell) return;
@@ -136,16 +136,3 @@ function updateGrid(station, decades) {
       updateGrid(station, decades);
     });
   });
-
-// function displayDecadeAverages(station, containerId) {
-//     getDecadeAverages(station).then(decades => {
-//         const el = document.getElementById(containerId);
-//         if (!el) return;
-//         el.innerHTML = "";
-//         decades.forEach(d => {
-//             const row = document.createElement("div");
-//             row.textContent = `${d.decade}: ${d.averageTemp > 0 ? "+" : ""}${d.averageTemp}°C`;
-//             el.appendChild(row);
-//         });
-//     });
-// }
